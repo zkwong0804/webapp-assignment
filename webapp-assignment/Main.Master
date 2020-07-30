@@ -74,8 +74,8 @@
                         </div>
                     </li>
                     <li class="nav-item"><a href="about.aspx" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="blog.aspx" class="nav-link">Blog</a></li>
                     <li class="nav-item"><a href="contact.aspx" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="LoginRegister.aspx" class="nav-link">Login / Register</a></li>
                     <li class="nav-item cta cta-colored"><a href="cart.aspx" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
                 </ul>
@@ -174,7 +174,8 @@
         <svg class="circular" width="48px" height="48px">
             <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
             <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
-        </svg></div>
+        </svg>
+    </div>
 
 
     <script src="js/jquery.min.js"></script>

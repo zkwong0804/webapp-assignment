@@ -205,6 +205,7 @@
     <Content Include="fonts\open-iconic\open-iconic.otf" />
     <Content Include="fonts\open-iconic\open-iconic.ttf" />
     <Content Include="fonts\open-iconic\open-iconic.woff" />
+    <Content Include="LoginRegister.aspx" />
     <Content Include="Main.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="images\about.jpg" />
@@ -262,6 +263,7 @@
     <Content Include="js\range.js" />
     <Content Include="js\scrollax.min.js" />
     <Content Include="product-single.aspx" />
+    <Content Include="RegisterValidation.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -349,6 +351,13 @@
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LoginRegister.aspx.designer.vb">
+      <DependentUpon>LoginRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginRegister.aspx.vb">
+      <DependentUpon>LoginRegister.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Main.Master.designer.vb">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
@@ -379,6 +388,13 @@
     </Compile>
     <Compile Include="product-single.aspx.vb">
       <DependentUpon>product-single.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RegisterValidation.aspx.designer.vb">
+      <DependentUpon>RegisterValidation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterValidation.aspx.vb">
+      <DependentUpon>RegisterValidation.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="shop.aspx.designer.vb">
