@@ -70,7 +70,12 @@
                                 ControlToValidate="tbxRegisterMail" 
                                 ErrorMessage="This field should not be empty!" 
                                 ForeColor="Red" 
-                                ValidationGroup="register"></asp:RequiredFieldValidator>
+                                ValidationGroup="register"></asp:RequiredFieldValidator> <br />
+                            <asp:Label ID="lblExistingMail" 
+                                runat="server" 
+                                Text="Email alrady exist! Please use another email!" 
+                                ForeColor="Red" 
+                                Visible="false"></asp:Label>
                         </div>
                         <div class="form-group">
                             <asp:Label ID="lblRegisterPass1" 

@@ -104,6 +104,15 @@ Partial Public Class LoginRegister
     Protected WithEvents rfvRegisterMail As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
+    '''lblExistingMail control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblExistingMail As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''lblRegisterPass1 control.
     '''</summary>
     '''<remarks>

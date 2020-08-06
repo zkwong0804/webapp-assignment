@@ -9,15 +9,13 @@ Public Class RegisterValidation
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If IsNothing(Session("rvEmail")) And IsNothing(Session("rvPass")) Then
-            lblMessage.Text = "You are not suspossed to be in here!"
+            Response.Redirect("AccessDenied.aspx")
         Else
             If Not Page.IsPostBack Then
                 lblMessage.Text = "Register mail: " & Session("rvEmail")
                 lblMessage.Text &= "<br />Register pass: " & Session("rvPass")
-                vCode = "1234"
+                vCode = CStr(CInt((9999 * Rnd()) + 1000))
                 sendVerificationMail(Session("rvEmail"), vCode)
-            Else
-                btnValidate.Text = "This is not first"
             End If
         End If
     End Sub
@@ -63,7 +61,9 @@ Public Class RegisterValidation
     Private Sub btnValidate_Click() Handles btnValidate.Click
         lblMessage.Text = tbxValidate.Text
         If tbxValidate.Text.ToString() = vCode Then
+            pnlValidate.Visible = False
             lblMessage.Text = "Email verified! Please click the following link to proceed the account setup process!"
+            lblMessage.Text &= "<br><a href='AccountUpdate.aspx'>Click here to complete your account</a>"
         Else
             lblMessage.Text = "Wrong verification code!"
         End If
