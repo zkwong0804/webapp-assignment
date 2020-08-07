@@ -59,6 +59,15 @@ Partial Public Class AccountUpdate
     Protected WithEvents tbxName As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''rfvName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rfvName As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
     '''lblContact control.
     '''</summary>
     '''<remarks>
@@ -75,6 +84,24 @@ Partial Public Class AccountUpdate
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents tbxContact As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''rfvContact control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rfvContact As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
+    '''revContact control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents revContact As Global.System.Web.UI.WebControls.RegularExpressionValidator
 
     '''<summary>
     '''lblAddress control.
@@ -95,6 +122,15 @@ Partial Public Class AccountUpdate
     Protected WithEvents tbxAddress As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''rfvAddress control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rfvAddress As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
     '''pnlDob control.
     '''</summary>
     '''<remarks>
@@ -113,13 +149,31 @@ Partial Public Class AccountUpdate
     Protected WithEvents lblDob As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''tbxDob control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tbxDob As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''calDob control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents calDob As Global.System.Web.UI.WebControls.Calendar
+    Protected WithEvents calDob As Global.AjaxControlToolkit.CalendarExtender
+
+    '''<summary>
+    '''lblDobValidate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblDobValidate As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''btnUpdate control.

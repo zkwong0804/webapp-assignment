@@ -16,9 +16,9 @@
                             <asp:Label ID="lblEmail"
                                 runat="server"
                                 Text="Email: "></asp:Label>
-                            <asp:TextBox ID="tbxEmail" 
-                                runat="server" 
-                                ReadOnly="true" 
+                            <asp:TextBox ID="tbxEmail"
+                                runat="server"
+                                ReadOnly="true"
                                 CssClass="form-control"></asp:TextBox>
                         </div>
 
@@ -29,16 +29,31 @@
                             <asp:TextBox ID="tbxName"
                                 runat="server"
                                 CssClass="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvName" runat="server"
+                                ControlToValidate="tbxName"
+                                ErrorMessage="This field should not be empty!"
+                                ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
 
                         <div class="form-group">
                             <asp:Label ID="lblContact"
                                 runat="server"
-                                Text="Contact"></asp:Label>
+                                Text="Contact (601xxxxxxxx)"></asp:Label>
                             <asp:TextBox ID="tbxContact"
                                 runat="server"
                                 CssClass="form-control"
                                 TextMode="Phone"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvContact" runat="server"
+                                ControlToValidate="tbxContact"
+                                ErrorMessage="This field should not be empty!"
+                                ForeColor="Red"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="revContact" runat="server"
+                                ControlToValidate="tbxContact"
+                                ErrorMessage="Invalid format! (6xxxxxxxxxx)"
+                                ForeColor="Red"
+                                ValidationExpression="601[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]">
+
+                            </asp:RegularExpressionValidator>
                         </div>
 
                         <div class="form-group">
@@ -49,6 +64,10 @@
                                 runat="server"
                                 CssClass="form-control"
                                 TextMode="MultiLine"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvAddress" runat="server"
+                                ControlToValidate="tbxAddress"
+                                ErrorMessage="This field should not be empty!"
+                                ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
 
                         <div class="form-group">
@@ -56,7 +75,14 @@
                                 <asp:Label ID="lblDob"
                                     runat="server"
                                     Text="Date of birth"></asp:Label>
-                                <asp:Calendar ID="calDob" runat="server"></asp:Calendar>
+                                <asp:TextBox ID="tbxDob" runat="server"></asp:TextBox>
+                                <ajaxToolkit:CalendarExtender ID="calDob" runat="server"
+                                    TargetControlID="tbxDob" Format="dd/MM/yyyy"/>
+
+                                <asp:Label ID="lblDobValidate" runat="server"
+                                    Visible="false"
+                                    ForeColor="Red"
+                                    Text="Invalid date!!"></asp:Label>
                             </asp:Panel>
                         </div>
 
@@ -74,4 +100,7 @@
             </div>
         </div>
     </section>
+</asp:Content>
+
+<asp:Content ID="jsContent" ContentPlaceHolderID="jsHolder" runat="server">
 </asp:Content>

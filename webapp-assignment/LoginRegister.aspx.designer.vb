@@ -68,6 +68,15 @@ Partial Public Class LoginRegister
     Protected WithEvents rfvLoginPass As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
+    '''lblLoginMessage control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblLoginMessage As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''btnLogin control.
     '''</summary>
     '''<remarks>

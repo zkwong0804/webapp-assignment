@@ -9,15 +9,22 @@
             <div class="row block-9">
                 <div class="col-md-12 order-md-last d-flex">
                     <asp:Label ID="lblMessage" runat="server"></asp:Label>
-                    <asp:Panel ID="pnlValidate" 
-                        runat="server" 
+
+                </div>
+            </div>
+
+            <div class="row block-9">
+                <div class="col-md-12 order-md-last d-flex">
+                    <asp:Panel ID="pnlValidate"
+                        runat="server"
                         Visible="false">
 
                         <asp:TextBox ID="tbxValidate"
                             runat="server"></asp:TextBox>
-                        <asp:Button ID="btnValidate" 
+                        <asp:Button ID="btnValidate"
                             runat="server"
-                            Text="Validate"/>
+                            Text="Validate" />
+                        
                     </asp:Panel>
                 </div>
             </div>

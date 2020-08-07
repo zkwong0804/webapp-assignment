@@ -7,7 +7,7 @@ Partial Public Class AssignmentDbContext
     Inherits DbContext
 
     Public Sub New()
-        MyBase.New("name=AssignmentDbContext1")
+        MyBase.New("name=AssignmentDbContext")
     End Sub
 
     Public Overridable Property Campaigns As DbSet(Of Campaign)
@@ -59,11 +59,6 @@ Partial Public Class AssignmentDbContext
             .HasMany(Function(e) e.Product_Order) _
             .WithRequired(Function(e) e.Order) _
             .WillCascadeOnDelete(False)
-
-        modelBuilder.Entity(Of Owner)() _
-            .HasMany(Function(e) e.Owner1) _
-            .WithRequired(Function(e) e.Owner2) _
-            .HasForeignKey(Function(e) e.superior)
 
         modelBuilder.Entity(Of Product)() _
             .Property(Function(e) e.price) _

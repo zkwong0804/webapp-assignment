@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" 
-    MasterPageFile="~/Main.Master" CodeBehind="LoginRegister.aspx.vb" 
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false"
+    MasterPageFile="~/Main.Master" CodeBehind="LoginRegister.aspx.vb"
     Inherits="webapp_assignment.LoginRegister" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -41,14 +41,16 @@
                                 ErrorMessage="This field should not be empty!"
                                 ForeColor="Red"
                                 ValidationGroup="login"></asp:RequiredFieldValidator>
+                            <br />
+                            <asp:Label ID="lblLoginMessage" runat="server" ForeColor="Red"></asp:Label>
                         </div>
                         <div class="form-group">
-                            <asp:Button 
-                                ID="btnLogin" 
-                                runat="server" 
-                                CssClass="btn btn-primary py-3 px-5" 
-                                Text="Login" 
-                                ValidationGroup="login"/>
+                            <asp:Button
+                                ID="btnLogin"
+                                runat="server"
+                                CssClass="btn btn-primary py-3 px-5"
+                                Text="Login"
+                                ValidationGroup="login" />
                         </div>
                     </div>
 
@@ -58,70 +60,72 @@
                     <div class="bg-white p-5 contact-form">
                         <h1>Register</h1>
                         <div class="form-group">
-                            <asp:Label ID="lblRegisterMail" 
-                                runat="server" 
+                            <asp:Label ID="lblRegisterMail"
+                                runat="server"
                                 Text="Your Email"></asp:Label>
-                            <asp:TextBox ID="tbxRegisterMail" 
-                                runat="server" 
-                                CssClass="form-control" 
+                            <asp:TextBox ID="tbxRegisterMail"
+                                runat="server"
+                                CssClass="form-control"
                                 TextMode="Email"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvRegisterMail" 
-                                runat="server" 
-                                ControlToValidate="tbxRegisterMail" 
-                                ErrorMessage="This field should not be empty!" 
-                                ForeColor="Red" 
-                                ValidationGroup="register"></asp:RequiredFieldValidator> <br />
-                            <asp:Label ID="lblExistingMail" 
-                                runat="server" 
-                                Text="Email alrady exist! Please use another email!" 
-                                ForeColor="Red" 
+                            <asp:RequiredFieldValidator ID="rfvRegisterMail"
+                                runat="server"
+                                ControlToValidate="tbxRegisterMail"
+                                ErrorMessage="This field should not be empty!"
+                                ForeColor="Red"
+                                ValidationGroup="register"></asp:RequiredFieldValidator>
+                            <br />
+                            <asp:Label ID="lblExistingMail"
+                                runat="server"
+                                Text="Email alrady exist! Please use another email!"
+                                ForeColor="Red"
                                 Visible="false"></asp:Label>
                         </div>
                         <div class="form-group">
-                            <asp:Label ID="lblRegisterPass1" 
-                                runat="server" 
+                            <asp:Label ID="lblRegisterPass1"
+                                runat="server"
                                 Text="Password"></asp:Label>
-                            <asp:TextBox ID="tbxRegisterPass1" 
-                                runat="server" 
-                                CssClass="form-control" 
+                            <asp:TextBox ID="tbxRegisterPass1"
+                                runat="server"
+                                CssClass="form-control"
                                 TextMode="Password"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvRegisterPass1" 
-                                runat="server" 
-                                ControlToValidate="tbxRegisterPass1" 
-                                ErrorMessage="This field should not be empty!" 
+                            <asp:RequiredFieldValidator ID="rfvRegisterPass1"
+                                runat="server"
+                                ControlToValidate="tbxRegisterPass1"
+                                ErrorMessage="This field should not be empty!"
                                 ForeColor="Red"
                                 ValidationGroup="register"></asp:RequiredFieldValidator>
                         </div>
                         <div class="form-group">
-                            <asp:Label ID="lblRegisterPass2" 
-                                runat="server" 
+                            <asp:Label ID="lblRegisterPass2"
+                                runat="server"
                                 Text="Re-enter password"></asp:Label>
-                            <asp:TextBox ID="tbxRegisterPass2" 
-                                runat="server" 
-                                CssClass="form-control" 
+                            <asp:TextBox ID="tbxRegisterPass2"
+                                runat="server"
+                                CssClass="form-control"
                                 TextMode="Password"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvRegisterPass2" 
-                                runat="server" 
-                                ControlToValidate="tbxRegisterPass2" 
-                                ErrorMessage="This field should not be empty!" 
+                            <asp:RequiredFieldValidator ID="rfvRegisterPass2"
+                                runat="server"
+                                ControlToValidate="tbxRegisterPass2"
+                                ErrorMessage="This field should not be empty!"
                                 ForeColor="Red"
-                                ValidationGroup="register"></asp:RequiredFieldValidator> <br />
-                            <asp:CompareValidator ID="cpvRegisterPass" 
-                                runat="server" 
-                                ControlToCompare="tbxRegisterPass1" 
-                                ControlToValidate="tbxRegisterPass2" 
-                                Operator="Equal" 
-                                ErrorMessage="Password 1 not equal to password 2!" 
-                                Forecolor="Red"
+                                ValidationGroup="register"></asp:RequiredFieldValidator>
+                            <br />
+                            <asp:CompareValidator ID="cpvRegisterPass"
+                                runat="server"
+                                ControlToCompare="tbxRegisterPass1"
+                                ControlToValidate="tbxRegisterPass2"
+                                Operator="Equal"
+                                ErrorMessage="Password 1 not equal to password 2!"
+                                ForeColor="Red"
                                 ValidationGroup="register">
 
                             </asp:CompareValidator>
                         </div>
                         <div class="form-group">
-                            <asp:Button ID="btnRegister" 
-                                runat="server" 
-                                Text="Register now!" 
-                                CssClass="btn btn-primary py-3 px-5" 
+                            <asp:Button ID="btnRegister"
+                                runat="server"
+                                Text="Register now!"
+                                CssClass="btn btn-primary py-3 px-5"
                                 ValidationGroup="register" />
                         </div>
                     </div>
