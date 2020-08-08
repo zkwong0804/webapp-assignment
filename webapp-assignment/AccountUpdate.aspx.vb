@@ -5,13 +5,15 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
-            If IsNothing(Session("rvEmail")) And IsNothing(Session("rvPass")) And IsNothing(Session("member")) Then
+            If IsNothing(Session("rvEmail")) And IsNothing(Session("member")) Then
                 Response.Redirect("AccessDenied.aspx")
             Else
                 If Not IsNothing(Session("rvEmail")) Then
                     lblAccount.Text = "Please fill in the following field to complete your account"
                     pnlDob.Visible = True
                     tbxEmail.Text = Session("rvEmail")
+                ElseIf Session("userType") <> "member" Then
+                    Response.Redirect("AccessDenied.aspx")
                 Else
                     member = Session("member")
                     tbxEmail.Text = member.User.email

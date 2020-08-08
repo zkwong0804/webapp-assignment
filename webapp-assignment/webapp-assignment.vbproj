@@ -149,6 +149,7 @@
     <Content Include="App_Data\Assignment_log.ldf">
       <DependentUpon>Assignment.mdf</DependentUpon>
     </Content>
+    <Content Include="OwnerPortal.aspx" />
     <Content Include="blog-single.aspx" />
     <Content Include="blog.aspx" />
     <Content Include="cart.aspx" />
@@ -227,6 +228,7 @@
     <Content Include="fonts\open-iconic\open-iconic.woff" />
     <Content Include="LoginRegister.aspx" />
     <Content Include="Main.Master" />
+    <Content Include="Owner.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="images\about.jpg" />
     <Content Include="images\bg_1.jpg" />
@@ -282,6 +284,8 @@
     <Content Include="js\popper.min.js" />
     <Content Include="js\range.js" />
     <Content Include="js\scrollax.min.js" />
+    <Content Include="OwnerLogin.aspx" />
+    <Content Include="OwnerProduct.aspx" />
     <Content Include="product-single.aspx" />
     <Content Include="RegisterValidation.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -336,6 +340,32 @@
     </Compile>
     <Compile Include="AccountUpdate.aspx.vb">
       <DependentUpon>AccountUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Models\AssignmentDbContext.vb" />
+    <Compile Include="Models\Campaign.vb" />
+    <Compile Include="Models\Category.vb" />
+    <Compile Include="Models\Comment.vb" />
+    <Compile Include="Models\Coupon.vb" />
+    <Compile Include="Models\Member.vb" />
+    <Compile Include="Models\Order.vb" />
+    <Compile Include="Models\Owner.vb" />
+    <Compile Include="Models\Product.vb" />
+    <Compile Include="Models\Product_Order.vb" />
+    <Compile Include="Models\Promotion.vb" />
+    <Compile Include="Models\User.vb" />
+    <Compile Include="Owner.Master.designer.vb">
+      <DependentUpon>Owner.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Owner.Master.vb">
+      <DependentUpon>Owner.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OwnerPortal.aspx.designer.vb">
+      <DependentUpon>OwnerPortal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerPortal.aspx.vb">
+      <DependentUpon>OwnerPortal.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="App_Start\BundleConfig.vb" />
@@ -412,19 +442,7 @@
     <Compile Include="Main.Master.vb">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
-    <Compile Include="Models\AssignmentDbContext.vb" />
-    <Compile Include="Models\Campaign.vb" />
-    <Compile Include="Models\Category.vb" />
-    <Compile Include="Models\Comment.vb" />
-    <Compile Include="Models\Coupon.vb" />
     <Compile Include="Models\Email.vb" />
-    <Compile Include="Models\Member.vb" />
-    <Compile Include="Models\Order.vb" />
-    <Compile Include="Models\Owner.vb" />
-    <Compile Include="Models\Product.vb" />
-    <Compile Include="Models\Product_Order.vb" />
-    <Compile Include="Models\Promotion.vb" />
-    <Compile Include="Models\User.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -443,6 +461,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="OwnerLogin.aspx.designer.vb">
+      <DependentUpon>OwnerLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerLogin.aspx.vb">
+      <DependentUpon>OwnerLogin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="OwnerProduct.aspx.designer.vb">
+      <DependentUpon>OwnerProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerProduct.aspx.vb">
+      <DependentUpon>OwnerProduct.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="product-single.aspx.designer.vb">
       <DependentUpon>product-single.aspx</DependentUpon>

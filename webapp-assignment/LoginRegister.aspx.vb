@@ -12,6 +12,7 @@
         Else
             If tbxLoginPass.Text = user.password Then
                 Session("member") = dbCtx.Members.Where(Function(e) e.userId = user.id).SingleOrDefault()
+                Session("userType") = "member"
                 Response.Redirect("Default.aspx")
             Else
                 lblLoginMessage.Text = "Wrong password!"

@@ -22,6 +22,8 @@ Partial Public Class Product
 
     Public Property isAvailable As Boolean
 
+    Public Property imageLoc As String
+
     Public Property category As Integer
 
     Public Overridable Property Category1 As Category

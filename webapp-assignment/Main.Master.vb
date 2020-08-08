@@ -26,6 +26,7 @@
 
     Protected Sub lbtLogout_Click() Handles lbtLogout.Click
         Session.Remove("member")
+        Session.Remove("userType")
         Response.Redirect("Default.aspx")
     End Sub
 
