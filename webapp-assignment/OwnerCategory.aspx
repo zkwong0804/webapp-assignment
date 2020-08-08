@@ -1,0 +1,37 @@
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Owner.Master" CodeBehind="OwnerCategory.aspx.vb" Inherits="webapp_assignment.OwnerCategory" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <section class="ftco-section contact-section bg-light">
+        <div class="container">
+
+            <div class="row block-9">
+                <div class="col-md-12 order-md-last d-flex">
+                    <asp:Label ID="lblCategoryMsg" runat="server"
+                        Visible="false"
+                        Text="There is no category exist in database"></asp:Label>
+                </div>
+            </div>
+
+            <div class="row block-9">
+                <div class="col-md-12 order-md-last d-flex">
+                    <asp:Table ID="tabCategory" runat="server"
+                        CssClass="table table-hover table-condensed">
+                        <asp:TableHeaderRow ID="thrHeader">
+                            <asp:TableHeaderCell>ID</asp:TableHeaderCell>
+                            <asp:TableHeaderCell>Name</asp:TableHeaderCell>
+                            <asp:TableHeaderCell ColumnSpan="2"></asp:TableHeaderCell>
+                        </asp:TableHeaderRow>
+                    </asp:Table>
+                </div>
+            </div>
+
+            <div class="row block-9">
+                <div class="col-md-12 order-md-last d-flex">
+                    <asp:Button ID="btnAdd" runat="server" Text="New category" />
+                </div>
+            </div>
+        </div>
+    </section>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="jsHolder" runat="server">
+</asp:Content>

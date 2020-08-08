@@ -11,59 +11,41 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Admin
+Partial Public Class OwnerCategory
 
     '''<summary>
-    '''head control.
+    '''lblCategoryMsg control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents lblCategoryMsg As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''form1 control.
+    '''tabCategory control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents tabCategory As Global.System.Web.UI.WebControls.Table
 
     '''<summary>
-    '''ScriptManager1 control.
+    '''thrHeader control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
+    Protected WithEvents thrHeader As Global.System.Web.UI.WebControls.TableHeaderRow
 
     '''<summary>
-    '''lbtLogout control.
+    '''btnAdd control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbtLogout As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''ContentPlaceHolder1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ContentPlaceHolder1 As Global.System.Web.UI.WebControls.ContentPlaceHolder
-
-    '''<summary>
-    '''jsHolder control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents jsHolder As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents btnAdd As Global.System.Web.UI.WebControls.Button
 End Class

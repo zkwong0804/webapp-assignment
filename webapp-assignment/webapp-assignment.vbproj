@@ -145,10 +145,16 @@
     <Content Include="about.aspx" />
     <Content Include="AccessDenied.aspx" />
     <Content Include="AccountUpdate.aspx" />
+    <Content Include="CategoryAdd.aspx" />
+    <Content Include="AddProduct.aspx" />
     <Content Include="App_Data\Assignment.mdf" />
     <Content Include="App_Data\Assignment_log.ldf">
       <DependentUpon>Assignment.mdf</DependentUpon>
     </Content>
+    <Content Include="CategoryDelete.aspx" />
+    <Content Include="CategoryNotFound.aspx" />
+    <Content Include="DeleteFail.aspx" />
+    <Content Include="OwnerCategory.aspx" />
     <Content Include="OwnerPortal.aspx" />
     <Content Include="blog-single.aspx" />
     <Content Include="blog.aspx" />
@@ -317,6 +323,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="shop.aspx" />
+    <Content Include="CategoryUpdate.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
   </ItemGroup>
@@ -342,6 +349,41 @@
       <DependentUpon>AccountUpdate.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="CategoryAdd.aspx.designer.vb">
+      <DependentUpon>CategoryAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryAdd.aspx.vb">
+      <DependentUpon>CategoryAdd.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AddProduct.aspx.designer.vb">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.aspx.vb">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CategoryDelete.aspx.designer.vb">
+      <DependentUpon>CategoryDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryDelete.aspx.vb">
+      <DependentUpon>CategoryDelete.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CategoryNotFound.aspx.designer.vb">
+      <DependentUpon>CategoryNotFound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryNotFound.aspx.vb">
+      <DependentUpon>CategoryNotFound.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DeleteFail.aspx.designer.vb">
+      <DependentUpon>DeleteFail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteFail.aspx.vb">
+      <DependentUpon>DeleteFail.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Models\AssignmentDbContext.vb" />
     <Compile Include="Models\Campaign.vb" />
     <Compile Include="Models\Category.vb" />
@@ -360,6 +402,13 @@
     <Compile Include="Owner.Master.vb">
       <DependentUpon>Owner.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OwnerCategory.aspx.designer.vb">
+      <DependentUpon>OwnerCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerCategory.aspx.vb">
+      <DependentUpon>OwnerCategory.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="OwnerPortal.aspx.designer.vb">
       <DependentUpon>OwnerPortal.aspx</DependentUpon>
@@ -495,6 +544,13 @@
     </Compile>
     <Compile Include="shop.aspx.vb">
       <DependentUpon>shop.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CategoryUpdate.aspx.designer.vb">
+      <DependentUpon>CategoryUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryUpdate.aspx.vb">
+      <DependentUpon>CategoryUpdate.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.vb">

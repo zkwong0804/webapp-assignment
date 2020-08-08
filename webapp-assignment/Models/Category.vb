@@ -18,7 +18,7 @@ Partial Public Class Category
     Public Property isAvailable As Boolean
 
     <Column("category")>
-    Public Property category1 As Integer
+    Public Property category1 As Integer?
 
     Public Overridable Property Category11 As ICollection(Of Category)
 

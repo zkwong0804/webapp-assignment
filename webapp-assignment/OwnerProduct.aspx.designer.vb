@@ -41,31 +41,13 @@ Partial Public Class OwnerProduct
     Protected WithEvents lbtRemove As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''pnlAdd control.
+    '''lblCategory control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pnlAdd As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''lblAddName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblAddName As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''tbxAddName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents tbxAddName As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lblCategory As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ddlCategory control.
@@ -75,31 +57,4 @@ Partial Public Class OwnerProduct
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddlCategory As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''tbxName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents tbxName As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''pnlUpdate control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlUpdate As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''pnlRemove control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlRemove As Global.System.Web.UI.WebControls.Panel
 End Class

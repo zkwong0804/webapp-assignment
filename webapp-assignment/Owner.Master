@@ -65,7 +65,7 @@
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active"><a href="OwnerPortal.aspx" class="nav-link">Home</a></li>
-                        
+                        <li class="nav-item"><a href="OwnerCategory.aspx" class="nav-link">Category</a></li>
                         <li class="nav-item"><a href="OwnerProduct.aspx" class="nav-link">Product</a></li>
                         <li class="nav-item"><a href="OwnerPromotion.aspx" class="nav-link">Promotion</a></li>
                         <li class="nav-item">
@@ -73,12 +73,6 @@
                                 runat="server"
                                 CssClass="nav-link"
                                 Text="Logout" Visible="false"></asp:LinkButton>
-                        </li>
-                        <%--<li class="nav-item"><a href="LoginRegister.aspx" class="nav-link">Login / Register</a></li>--%>
-                        <li class="nav-item cta cta-colored">
-                            <asp:LinkButton ID="lbtCart" runat="server" CssClass="nav-link" Visible="false">
-                                <span class="icon-shopping-cart"></span>[0]
-                            </asp:LinkButton>
                         </li>
 
                     </ul>

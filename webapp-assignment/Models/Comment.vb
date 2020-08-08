@@ -21,7 +21,7 @@ Partial Public Class Comment
 
     Public Property creator As Integer
 
-    Public Property replyTo As Integer
+    Public Property replyTo As Integer?
 
     Public Overridable Property Member As Member
 

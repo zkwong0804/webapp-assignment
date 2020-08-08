@@ -15,24 +15,11 @@
 
             <div class="row block-9">
                 <div class="col-md-9 order-md-last d-flex">
-                    <asp:Panel ID="pnlAdd" runat="server">
-                        <div class="form-group">
-                            <asp:Label ID="lblAddName" runat="server" Text="Product name"></asp:Label>
-                            <asp:TextBox ID="tbxAddName" runat="server" 
-                                ValidationGroup="add" 
-                                CssClass="form-control"></asp:TextBox>
-                            <asp:DropDownList ID="ddlCategory" runat="server"></asp:DropDownList>
-                            <asp:TextBox ID="tbxName" runat="server"></asp:TextBox>
-                        </div>
-                    </asp:Panel>
-                    <asp:Panel ID="pnlUpdate" runat="server" Visible="false">
-                        <h1>Update product</h1>
-
-                    </asp:Panel>
-                    <asp:Panel ID="pnlRemove" runat="server" Visible="false">
-                        <h1>Remove product</h1>
-
-                    </asp:Panel>
+                    <div class="form-group">
+                        <asp:Label ID="lblCategory" runat="server" Text="Product category"></asp:Label>
+                        <asp:DropDownList ID="ddlCategory" runat="server" 
+                            CssClass="form-control"></asp:DropDownList>
+                    </div>
                 </div>
             </div>
         </div>

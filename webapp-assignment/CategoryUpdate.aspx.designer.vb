@@ -11,59 +11,77 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Admin
+Partial Public Class UpdateCategory
 
     '''<summary>
-    '''head control.
+    '''lblName control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents lblName As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''form1 control.
+    '''tbxName control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents tbxName As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ScriptManager1 control.
+    '''rfvName control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
+    Protected WithEvents rfvName As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''lbtLogout control.
+    '''lblCategory control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbtLogout As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents lblCategory As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ContentPlaceHolder1 control.
+    '''ddlCategory control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ContentPlaceHolder1 As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents ddlCategory As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''jsHolder control.
+    '''lblAvailable control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents jsHolder As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents lblAvailable As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''cbxAvailable control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cbxAvailable As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''btnUpdate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnUpdate As Global.System.Web.UI.WebControls.Button
 End Class

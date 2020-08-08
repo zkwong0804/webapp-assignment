@@ -25,7 +25,7 @@ Partial Public Class AssignmentDbContext
     Protected Overrides Sub OnModelCreating(ByVal modelBuilder As DbModelBuilder)
         modelBuilder.Entity(Of Category)() _
             .HasMany(Function(e) e.Category11) _
-            .WithRequired(Function(e) e.Category2) _
+            .WithOptional(Function(e) e.Category2) _
             .HasForeignKey(Function(e) e.category1)
 
         modelBuilder.Entity(Of Category)() _
@@ -36,7 +36,7 @@ Partial Public Class AssignmentDbContext
 
         modelBuilder.Entity(Of Comment)() _
             .HasMany(Function(e) e.Comment11) _
-            .WithRequired(Function(e) e.Comment2) _
+            .WithOptional(Function(e) e.Comment2) _
             .HasForeignKey(Function(e) e.replyTo)
 
         modelBuilder.Entity(Of Member)() _
