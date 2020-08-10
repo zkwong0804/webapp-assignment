@@ -12,4 +12,76 @@ Option Explicit On
 
 
 Partial Public Class CategoryManage
+
+    '''<summary>
+    '''lblName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblName As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''tbxName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tbxName As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''rfvName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rfvName As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
+    '''lblCategory control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblCategory As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ddlCategory control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlCategory As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''lblAvailable control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblAvailable As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''cbxAvailable control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cbxAvailable As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''cphButton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cphButton As Global.System.Web.UI.WebControls.ContentPlaceHolder
 End Class

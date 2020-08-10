@@ -14,69 +14,6 @@ Option Explicit On
 Partial Public Class CategoryUpdate
 
     '''<summary>
-    '''lblName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblName As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''tbxName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents tbxName As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''rfvName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents rfvName As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''lblCategory control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblCategory As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''ddlCategory control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ddlCategory As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''lblAvailable control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblAvailable As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''cbxAvailable control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents cbxAvailable As Global.System.Web.UI.WebControls.CheckBox
-
-    '''<summary>
     '''btnUpdate control.
     '''</summary>
     '''<remarks>
@@ -84,4 +21,16 @@ Partial Public Class CategoryUpdate
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnUpdate As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Master property.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated property.
+    '''</remarks>
+    Public Shadows ReadOnly Property Master() As webapp_assignment.CategoryManage
+        Get
+            Return CType(MyBase.Master, webapp_assignment.CategoryManage)
+        End Get
+    End Property
 End Class

@@ -5,6 +5,7 @@
     End Sub
 
     Protected Sub btnAdd_Click() Handles btnAdd.Click
+
         If Page.IsValid Then
             If Master.IsHasImage Then
                 Master.ImageMessage = ""

@@ -149,9 +149,10 @@
     <Content Include="App_Data\Assignment_log.ldf">
       <DependentUpon>Assignment.mdf</DependentUpon>
     </Content>
+    <Content Include="CategoryAdd.aspx" />
+    <Content Include="CategoryUpdate.aspx" />
     <Content Include="InsufficientCategory.aspx" />
     <Content Include="OwnerProduct.aspx" />
-    <Content Include="CategoryAdd.aspx" />
     <Content Include="ProductAdd.aspx" />
     <Content Include="CategoryDelete.aspx" />
     <Content Include="ProductDelete.aspx" />
@@ -329,7 +330,6 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="shop.aspx" />
-    <Content Include="CategoryUpdate.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
   </ItemGroup>
@@ -355,12 +355,26 @@
       <DependentUpon>AccountUpdate.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="CategoryAdd.aspx.designer.vb">
+      <DependentUpon>CategoryAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryAdd.aspx.vb">
+      <DependentUpon>CategoryAdd.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="CategoryManage.master.designer.vb">
       <DependentUpon>CategoryManage.master</DependentUpon>
     </Compile>
     <Compile Include="CategoryManage.master.vb">
       <DependentUpon>CategoryManage.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CategoryUpdate.aspx.designer.vb">
+      <DependentUpon>CategoryUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryUpdate.aspx.vb">
+      <DependentUpon>CategoryUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="InsufficientCategory.aspx.designer.vb">
       <DependentUpon>InsufficientCategory.aspx</DependentUpon>
@@ -386,13 +400,6 @@
     </Compile>
     <Compile Include="OwnerProduct.aspx.vb">
       <DependentUpon>OwnerProduct.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="CategoryAdd.aspx.designer.vb">
-      <DependentUpon>CategoryAdd.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CategoryAdd.aspx.vb">
-      <DependentUpon>CategoryAdd.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ProductAdd.aspx.designer.vb">
@@ -592,13 +599,6 @@
     </Compile>
     <Compile Include="shop.aspx.vb">
       <DependentUpon>shop.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="CategoryUpdate.aspx.designer.vb">
-      <DependentUpon>CategoryUpdate.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CategoryUpdate.aspx.vb">
-      <DependentUpon>CategoryUpdate.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.vb">
