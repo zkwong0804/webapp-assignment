@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class AddCategory
+Partial Public Class CategoryAdd
 
     '''<summary>
     '''lblName control.

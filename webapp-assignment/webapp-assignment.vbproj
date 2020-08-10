@@ -145,13 +145,17 @@
     <Content Include="about.aspx" />
     <Content Include="AccessDenied.aspx" />
     <Content Include="AccountUpdate.aspx" />
-    <Content Include="CategoryAdd.aspx" />
-    <Content Include="AddProduct.aspx" />
     <Content Include="App_Data\Assignment.mdf" />
     <Content Include="App_Data\Assignment_log.ldf">
       <DependentUpon>Assignment.mdf</DependentUpon>
     </Content>
+    <Content Include="InsufficientCategory.aspx" />
+    <Content Include="OwnerProduct.aspx" />
+    <Content Include="CategoryAdd.aspx" />
+    <Content Include="ProductAdd.aspx" />
     <Content Include="CategoryDelete.aspx" />
+    <Content Include="ProductDelete.aspx" />
+    <Content Include="ProductNotFound.aspx" />
     <Content Include="CategoryNotFound.aspx" />
     <Content Include="DeleteFail.aspx" />
     <Content Include="OwnerCategory.aspx" />
@@ -235,6 +239,8 @@
     <Content Include="LoginRegister.aspx" />
     <Content Include="Main.Master" />
     <Content Include="Owner.Master" />
+    <Content Include="ProductManage.master" />
+    <Content Include="CategoryManage.master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="images\about.jpg" />
     <Content Include="images\bg_1.jpg" />
@@ -291,8 +297,8 @@
     <Content Include="js\range.js" />
     <Content Include="js\scrollax.min.js" />
     <Content Include="OwnerLogin.aspx" />
-    <Content Include="OwnerProduct.aspx" />
     <Content Include="product-single.aspx" />
+    <Content Include="ProductUpdate.aspx" />
     <Content Include="RegisterValidation.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -349,6 +355,39 @@
       <DependentUpon>AccountUpdate.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="CategoryManage.master.designer.vb">
+      <DependentUpon>CategoryManage.master</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryManage.master.vb">
+      <DependentUpon>CategoryManage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsufficientCategory.aspx.designer.vb">
+      <DependentUpon>InsufficientCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InsufficientCategory.aspx.vb">
+      <DependentUpon>InsufficientCategory.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Models\AssignmentDbContext.vb" />
+    <Compile Include="Models\Campaign.vb" />
+    <Compile Include="Models\Category.vb" />
+    <Compile Include="Models\Comment.vb" />
+    <Compile Include="Models\Coupon.vb" />
+    <Compile Include="Models\Member.vb" />
+    <Compile Include="Models\Order.vb" />
+    <Compile Include="Models\Owner.vb" />
+    <Compile Include="Models\Product.vb" />
+    <Compile Include="Models\Product_Order.vb" />
+    <Compile Include="Models\Promotion.vb" />
+    <Compile Include="Models\User.vb" />
+    <Compile Include="OwnerProduct.aspx.designer.vb">
+      <DependentUpon>OwnerProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerProduct.aspx.vb">
+      <DependentUpon>OwnerProduct.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="CategoryAdd.aspx.designer.vb">
       <DependentUpon>CategoryAdd.aspx</DependentUpon>
     </Compile>
@@ -356,11 +395,11 @@
       <DependentUpon>CategoryAdd.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="AddProduct.aspx.designer.vb">
-      <DependentUpon>AddProduct.aspx</DependentUpon>
+    <Compile Include="ProductAdd.aspx.designer.vb">
+      <DependentUpon>ProductAdd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddProduct.aspx.vb">
-      <DependentUpon>AddProduct.aspx</DependentUpon>
+    <Compile Include="ProductAdd.aspx.vb">
+      <DependentUpon>ProductAdd.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="CategoryDelete.aspx.designer.vb">
@@ -368,6 +407,27 @@
     </Compile>
     <Compile Include="CategoryDelete.aspx.vb">
       <DependentUpon>CategoryDelete.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ProductDelete.aspx.designer.vb">
+      <DependentUpon>ProductDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDelete.aspx.vb">
+      <DependentUpon>ProductDelete.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ProductManage.master.designer.vb">
+      <DependentUpon>ProductManage.master</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManage.master.vb">
+      <DependentUpon>ProductManage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductNotFound.aspx.designer.vb">
+      <DependentUpon>ProductNotFound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductNotFound.aspx.vb">
+      <DependentUpon>ProductNotFound.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="CategoryNotFound.aspx.designer.vb">
@@ -384,18 +444,6 @@
       <DependentUpon>DeleteFail.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Models\AssignmentDbContext.vb" />
-    <Compile Include="Models\Campaign.vb" />
-    <Compile Include="Models\Category.vb" />
-    <Compile Include="Models\Comment.vb" />
-    <Compile Include="Models\Coupon.vb" />
-    <Compile Include="Models\Member.vb" />
-    <Compile Include="Models\Order.vb" />
-    <Compile Include="Models\Owner.vb" />
-    <Compile Include="Models\Product.vb" />
-    <Compile Include="Models\Product_Order.vb" />
-    <Compile Include="Models\Promotion.vb" />
-    <Compile Include="Models\User.vb" />
     <Compile Include="Owner.Master.designer.vb">
       <DependentUpon>Owner.Master</DependentUpon>
     </Compile>
@@ -518,18 +566,18 @@
       <DependentUpon>OwnerLogin.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="OwnerProduct.aspx.designer.vb">
-      <DependentUpon>OwnerProduct.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="OwnerProduct.aspx.vb">
-      <DependentUpon>OwnerProduct.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="product-single.aspx.designer.vb">
       <DependentUpon>product-single.aspx</DependentUpon>
     </Compile>
     <Compile Include="product-single.aspx.vb">
       <DependentUpon>product-single.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ProductUpdate.aspx.designer.vb">
+      <DependentUpon>ProductUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductUpdate.aspx.vb">
+      <DependentUpon>ProductUpdate.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="RegisterValidation.aspx.designer.vb">
@@ -684,6 +732,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
+    <Folder Include="images\Products\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

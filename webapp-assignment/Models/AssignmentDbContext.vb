@@ -62,7 +62,7 @@ Partial Public Class AssignmentDbContext
 
         modelBuilder.Entity(Of Product)() _
             .Property(Function(e) e.price) _
-            .HasPrecision(18, 0)
+            .HasPrecision(12, 2)
 
         modelBuilder.Entity(Of Product)() _
             .HasMany(Function(e) e.Product_Order) _

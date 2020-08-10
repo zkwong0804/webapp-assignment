@@ -1,0 +1,73 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/Owner.Master" AutoEventWireup="false" CodeBehind="ProductManage.master.vb" Inherits="webapp_assignment.ProductManage" %>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <section class="ftco-section contact-section bg-light">
+        <div class="container">
+            <div class="row block-9">
+                <div class="col-md-6 order-md-last d-flex">
+                    <div class="bg-white p-5 contact-form">
+                        <div class="form-group">
+                            <asp:Label ID="lblName" runat="server" Text="Name"></asp:Label>
+                            <asp:TextBox ID="tbxName" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="tbxName"
+                                ErrorMessage="This field is required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+
+                        <div class="form-group">
+                            <asp:Label ID="lblCategory" runat="server" Text="Parent category"></asp:Label>
+                            <asp:DropDownList ID="ddlCategory" runat="server" CssClass="form-control"></asp:DropDownList>
+                        </div>
+
+                        <div class="form-group">
+                            <asp:Label ID="lblPrice" runat="server" Text="Price"></asp:Label>
+                            <asp:TextBox ID="tbxPrice" runat="server"
+                                CssClass="form-control"></asp:TextBox>
+                            <asp:CustomValidator ID="cuvPrice" runat="server"
+                                ErrorMessage="Invalid price"
+                                ControlToValidate="tbxPrice"
+                                ForeColor="Red"></asp:CustomValidator>
+                        </div>
+
+                        <div class="form-group">
+                            <asp:Label ID="lblAmt" runat="server" Text="Amount"></asp:Label>
+                            <asp:TextBox ID="tbxAmt" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                            <asp:CustomValidator ID="cuvAmt" runat="server"
+                                ErrorMessage="Stock amount should not be negative"
+                                ControlToValidate="tbxAmt"
+                                ForeColor="Red"></asp:CustomValidator>
+                        </div>
+
+                        <div class="form-group">
+                            <asp:Label ID="lblDesc" runat="server" Text="Description"></asp:Label>
+                            <asp:TextBox ID="tbxDesc" runat="server"
+                                CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvDesc" runat="server" ControlToValidate="tbxDesc"
+                                ErrorMessage="This field is required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+
+                        <div class="form-group">
+                            <asp:Image ID="imgProduct" runat="server" 
+                                ImageUrl="~/images/Products/Default.png" ClientIDMode="Static" 
+                                Width="100px" Height="100px" /> 
+                            <asp:Label ID="lblImage" runat="server" Text="Image"></asp:Label>
+                            <asp:FileUpload ID="fupImage" runat="server" CssClass="form-control" ClientIDMode="Static"/>
+                            <asp:Label ID="lblImageMsg" runat="server" ForeColor="Red"></asp:Label>
+                        </div>
+
+                        <div class="form-group">
+                            <asp:Label ID="lblAvailable" runat="server" Text="Is available?"></asp:Label>
+                            <asp:CheckBox ID="cbxAvailable" runat="server" Checked="true" />
+                        </div>
+
+                        <div class="form-group">
+                            <asp:ContentPlaceHolder ID="btnHolder" runat="server"></asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="jsHolder" runat="server">
+</asp:Content>

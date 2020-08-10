@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Owner.Master" CodeBehind="CategoryAdd.aspx.vb" Inherits="webapp_assignment.AddCategory" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Owner.Master" CodeBehind="CategoryAdd.aspx.vb" Inherits="webapp_assignment.CategoryAdd" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <section class="ftco-section contact-section bg-light">

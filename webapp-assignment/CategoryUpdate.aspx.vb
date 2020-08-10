@@ -1,4 +1,4 @@
-﻿Public Class UpdateCategory
+﻿Public Class CategoryUpdate
     Inherits System.Web.UI.Page
     Shared dbCtx As New AssignmentDbContext()
     Shared category As Category

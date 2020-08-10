@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class UpdateCategory
+Partial Public Class CategoryUpdate
 
     '''<summary>
     '''lblName control.

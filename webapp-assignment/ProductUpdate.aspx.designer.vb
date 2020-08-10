@@ -11,41 +11,35 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class OwnerProduct
+Partial Public Class ProductUpdate
 
     '''<summary>
-    '''lblProductMsg control.
+    '''btnUpdate control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblProductMsg As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents btnUpdate As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''tabCategory control.
+    '''lblTest control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents tabCategory As Global.System.Web.UI.WebControls.Table
+    Protected WithEvents lblTest As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''thrHeader control.
+    '''Master property.
     '''</summary>
     '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
+    '''Auto-generated property.
     '''</remarks>
-    Protected WithEvents thrHeader As Global.System.Web.UI.WebControls.TableHeaderRow
-
-    '''<summary>
-    '''btnAdd control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnAdd As Global.System.Web.UI.WebControls.Button
+    Public Shadows ReadOnly Property Master() As webapp_assignment.ProductManage
+        Get
+            Return CType(MyBase.Master, webapp_assignment.ProductManage)
+        End Get
+    End Property
 End Class

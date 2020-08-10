@@ -3,23 +3,35 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="ftco-section contact-section bg-light">
         <div class="container">
+
             <div class="row block-9">
                 <div class="col-md-12 order-md-last d-flex">
-                    <asp:LinkButton ID="lbtAdd" runat="server" Text="Add"></asp:LinkButton>
-                    <asp:LinkButton ID="lbtUpdate" runat="server" Text="Update"></asp:LinkButton>
-                    <asp:LinkButton ID="lbtRemove" runat="server" Text="Remove"></asp:LinkButton>
-
-
+                    <asp:Label ID="lblProductMsg" runat="server"
+                        Visible="false"
+                        Text="There is no product exist in database"></asp:Label>
                 </div>
             </div>
 
             <div class="row block-9">
-                <div class="col-md-9 order-md-last d-flex">
-                    <div class="form-group">
-                        <asp:Label ID="lblCategory" runat="server" Text="Product category"></asp:Label>
-                        <asp:DropDownList ID="ddlCategory" runat="server" 
-                            CssClass="form-control"></asp:DropDownList>
-                    </div>
+                <div class="col-md-12 order-md-last d-flex">
+                    <asp:Table ID="tabCategory" runat="server"
+                        CssClass="table table-hover table-condensed">
+                        <asp:TableHeaderRow ID="thrHeader">
+                            <asp:TableHeaderCell>ID</asp:TableHeaderCell>
+                            <asp:TableHeaderCell>Image</asp:TableHeaderCell>
+                            <asp:TableHeaderCell>Name</asp:TableHeaderCell>
+                            <asp:TableHeaderCell>RM</asp:TableHeaderCell>
+                            <asp:TableHeaderCell>Amt</asp:TableHeaderCell>
+                            <asp:TableHeaderCell>Desc</asp:TableHeaderCell>
+                            <asp:TableHeaderCell ColumnSpan="2"></asp:TableHeaderCell>
+                        </asp:TableHeaderRow>
+                    </asp:Table>
+                </div>
+            </div>
+
+            <div class="row block-9">
+                <div class="col-md-12 order-md-last d-flex">
+                    <asp:Button ID="btnAdd" runat="server" Text="New product" />
                 </div>
             </div>
         </div>
