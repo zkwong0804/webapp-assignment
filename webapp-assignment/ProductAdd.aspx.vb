@@ -15,7 +15,7 @@
                 newProd.category = Master.Category
                 newProd.price = Master.Price
                 newProd.amt = Master.Amt
-                newProd.desc = Master.Desc
+                newProd.description = Master.Desc
 
                 Master.SaveImage()
                 newProd.imageLoc = Master.GetUploadImageLoc()

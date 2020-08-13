@@ -12,7 +12,7 @@
                 Master.Name = product.name
                 Master.Price = product.price
                 Master.Amt = product.amt.ToString
-                Master.Desc = product.desc
+                Master.Desc = product.description
                 Master.Category = product.category
                 Master.SetImage(product.imageLoc)
             End If
@@ -25,7 +25,7 @@
             product.name = Master.Name
             product.price = Master.Price
             product.amt = Master.Amt
-            product.desc = Master.Desc
+            product.description = Master.Desc
             product.category = Master.Category
 
             If Master.IsHasImage Then

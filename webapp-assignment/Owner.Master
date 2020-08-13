@@ -67,12 +67,12 @@
                         <li class="nav-item active"><a href="OwnerPortal.aspx" class="nav-link">Home</a></li>
                         <li class="nav-item"><a href="OwnerCategory.aspx" class="nav-link">Category</a></li>
                         <li class="nav-item"><a href="OwnerProduct.aspx" class="nav-link">Product</a></li>
-                        <li class="nav-item"><a href="OwnerPromotion.aspx" class="nav-link">Promotion</a></li>
+                        <li class="nav-item"><a href="OwnerPromotionCoupon.aspx" class="nav-link">Coupons</a></li>
                         <li class="nav-item">
                             <asp:LinkButton ID="lbtLogout"
                                 runat="server"
                                 CssClass="nav-link"
-                                Text="Logout" Visible="false"></asp:LinkButton>
+                                Text="Logout" Visible="True"></asp:LinkButton>
                         </li>
 
                     </ul>

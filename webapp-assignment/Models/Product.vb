@@ -18,7 +18,7 @@ Partial Public Class Product
 
     Public Property amt As Integer?
 
-    Public Property desc As String
+    Public Property description As String
 
     Public Property isAvailable As Boolean
 

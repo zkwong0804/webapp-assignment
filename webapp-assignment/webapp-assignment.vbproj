@@ -151,8 +151,14 @@
     </Content>
     <Content Include="CategoryAdd.aspx" />
     <Content Include="CategoryUpdate.aspx" />
+    <Content Include="CategoryView.aspx" />
+    <Content Include="CouponAdd.aspx" />
+    <Content Include="CouponDelete.aspx" />
+    <Content Include="CouponNotFound.aspx" />
+    <Content Include="CouponUpdate.aspx" />
     <Content Include="InsufficientCategory.aspx" />
     <Content Include="OwnerProduct.aspx" />
+    <Content Include="OwnerPromotionCoupon.aspx" />
     <Content Include="ProductAdd.aspx" />
     <Content Include="CategoryDelete.aspx" />
     <Content Include="ProductDelete.aspx" />
@@ -242,6 +248,8 @@
     <Content Include="Owner.Master" />
     <Content Include="ProductManage.master" />
     <Content Include="CategoryManage.master" />
+    <Content Include="ProductView.aspx" />
+    <Content Include="CouponManage.master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="images\about.jpg" />
     <Content Include="images\bg_1.jpg" />
@@ -376,6 +384,48 @@
       <DependentUpon>CategoryUpdate.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="CategoryView.aspx.designer.vb">
+      <DependentUpon>CategoryView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryView.aspx.vb">
+      <DependentUpon>CategoryView.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CouponAdd.aspx.designer.vb">
+      <DependentUpon>CouponAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CouponAdd.aspx.vb">
+      <DependentUpon>CouponAdd.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CouponDelete.aspx.designer.vb">
+      <DependentUpon>CouponDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CouponDelete.aspx.vb">
+      <DependentUpon>CouponDelete.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CouponManage.master.designer.vb">
+      <DependentUpon>CouponManage.master</DependentUpon>
+    </Compile>
+    <Compile Include="CouponManage.master.vb">
+      <DependentUpon>CouponManage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CouponNotFound.aspx.designer.vb">
+      <DependentUpon>CouponNotFound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CouponNotFound.aspx.vb">
+      <DependentUpon>CouponNotFound.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CouponUpdate.aspx.designer.vb">
+      <DependentUpon>CouponUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CouponUpdate.aspx.vb">
+      <DependentUpon>CouponUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="InsufficientCategory.aspx.designer.vb">
       <DependentUpon>InsufficientCategory.aspx</DependentUpon>
     </Compile>
@@ -384,7 +434,6 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Models\AssignmentDbContext.vb" />
-    <Compile Include="Models\Campaign.vb" />
     <Compile Include="Models\Category.vb" />
     <Compile Include="Models\Comment.vb" />
     <Compile Include="Models\Coupon.vb" />
@@ -393,13 +442,19 @@
     <Compile Include="Models\Owner.vb" />
     <Compile Include="Models\Product.vb" />
     <Compile Include="Models\Product_Order.vb" />
-    <Compile Include="Models\Promotion.vb" />
     <Compile Include="Models\User.vb" />
     <Compile Include="OwnerProduct.aspx.designer.vb">
       <DependentUpon>OwnerProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="OwnerProduct.aspx.vb">
       <DependentUpon>OwnerProduct.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="OwnerPromotionCoupon.aspx.designer.vb">
+      <DependentUpon>OwnerPromotionCoupon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerPromotionCoupon.aspx.vb">
+      <DependentUpon>OwnerPromotionCoupon.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ProductAdd.aspx.designer.vb">
@@ -545,6 +600,7 @@
     </Compile>
     <Compile Include="Main.Master.vb">
       <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Models\Email.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -585,6 +641,13 @@
     </Compile>
     <Compile Include="ProductUpdate.aspx.vb">
       <DependentUpon>ProductUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ProductView.aspx.designer.vb">
+      <DependentUpon>ProductView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductView.aspx.vb">
+      <DependentUpon>ProductView.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="RegisterValidation.aspx.designer.vb">

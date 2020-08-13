@@ -74,4 +74,18 @@ Public Class Email
         vMail.Subject = subject
         Me.Client.Send(vMail)
     End Sub
+
+    Public Sub SendMultiple(ByVal recepients As List(Of Member), ByVal subject As String, ByVal body As String)
+        Dim mailFrom As New MailAddress(Me.SmtpMail)
+
+        Dim vMail As New MailMessage()
+        vMail.From = mailFrom
+        For Each member As Member In recepients
+            vMail.To.Add(New MailAddress(member.User.email))
+        Next
+        vMail.Body = body
+        vMail.BodyEncoding = UTF8Encoding.UTF8
+        vMail.Subject = subject
+        Me.Client.Send(vMail)
+    End Sub
 End Class

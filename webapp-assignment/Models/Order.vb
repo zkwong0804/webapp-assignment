@@ -25,11 +25,11 @@ Partial Public Class Order
 
     Public Property member As Integer
 
-    Public Property grantedPromotion As Integer
+    Public Property grantedCoupon As Integer
+
+    Public Overridable Property Coupon As Coupon
 
     Public Overridable Property Member1 As Member
-
-    Public Overridable Property Promotion As Promotion
 
     Public Overridable Property Product_Order As ICollection(Of Product_Order)
 End Class

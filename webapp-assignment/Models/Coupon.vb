@@ -6,11 +6,25 @@ Imports System.Data.Entity.Spatial
 
 <Table("Coupon")>
 Partial Public Class Coupon
+    Public Sub New()
+        Orders = New HashSet(Of Order)()
+    End Sub
+
     Public Property id As Integer
 
-    Public Property promotionID As Integer
+    Public Property name As String
 
-    Public Property availableGrantAmt As Integer?
+    Public Property description As String
 
-    Public Overridable Property Promotion As Promotion
+    Public Property isFreeShipping As Boolean?
+
+    Public Property discountRate As Decimal?
+
+    Public Property product As Integer?
+
+    Public Property category As Integer?
+
+    Public Property available As Boolean?
+
+    Public Overridable Property Orders As ICollection(Of Order)
 End Class

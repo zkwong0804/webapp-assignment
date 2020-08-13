@@ -117,6 +117,10 @@
         fupImage.SaveAs(Server.MapPath(GetUploadImageLoc()))
     End Sub
 
+    Public Sub ImageUploadVisibilityToggle()
+        fupImage.Visible = Not fupImage.Visible
+    End Sub
+
     Public Property Available As Boolean
         Get
             Return cbxAvailable.Checked

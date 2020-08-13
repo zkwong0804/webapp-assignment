@@ -32,7 +32,7 @@
         imageCell.Controls.Add(imgControl)
         priceCell.Text = prod.price.ToString()
         amtCell.Text = prod.amt.ToString()
-        descCell.Text = prod.desc
+        descCell.Text = prod.description
 
         If Not prod.isAvailable Then
             idCell.ForeColor = Drawing.Color.Red

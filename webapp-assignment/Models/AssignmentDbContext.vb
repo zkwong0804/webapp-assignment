@@ -10,7 +10,6 @@ Partial Public Class AssignmentDbContext
         MyBase.New("name=AssignmentDbContext")
     End Sub
 
-    Public Overridable Property Campaigns As DbSet(Of Campaign)
     Public Overridable Property Categories As DbSet(Of Category)
     Public Overridable Property Comments As DbSet(Of Comment)
     Public Overridable Property Coupons As DbSet(Of Coupon)
@@ -19,7 +18,6 @@ Partial Public Class AssignmentDbContext
     Public Overridable Property Owners As DbSet(Of Owner)
     Public Overridable Property Products As DbSet(Of Product)
     Public Overridable Property Product_Order As DbSet(Of Product_Order)
-    Public Overridable Property Promotions As DbSet(Of Promotion)
     Public Overridable Property Users As DbSet(Of User)
 
     Protected Overrides Sub OnModelCreating(ByVal modelBuilder As DbModelBuilder)
@@ -38,6 +36,16 @@ Partial Public Class AssignmentDbContext
             .HasMany(Function(e) e.Comment11) _
             .WithOptional(Function(e) e.Comment2) _
             .HasForeignKey(Function(e) e.replyTo)
+
+        modelBuilder.Entity(Of Coupon)() _
+            .Property(Function(e) e.discountRate) _
+            .HasPrecision(12, 2)
+
+        modelBuilder.Entity(Of Coupon)() _
+            .HasMany(Function(e) e.Orders) _
+            .WithRequired(Function(e) e.Coupon) _
+            .HasForeignKey(Function(e) e.grantedCoupon) _
+            .WillCascadeOnDelete(False)
 
         modelBuilder.Entity(Of Member)() _
             .HasMany(Function(e) e.Comments) _
@@ -73,26 +81,6 @@ Partial Public Class AssignmentDbContext
         modelBuilder.Entity(Of Product_Order)() _
             .Property(Function(e) e.price) _
             .HasPrecision(18, 0)
-
-        modelBuilder.Entity(Of Promotion)() _
-            .Property(Function(e) e.discountRate) _
-            .HasPrecision(18, 0)
-
-        modelBuilder.Entity(Of Promotion)() _
-            .HasMany(Function(e) e.Campaigns) _
-            .WithRequired(Function(e) e.Promotion) _
-            .WillCascadeOnDelete(False)
-
-        modelBuilder.Entity(Of Promotion)() _
-            .HasMany(Function(e) e.Coupons) _
-            .WithRequired(Function(e) e.Promotion) _
-            .WillCascadeOnDelete(False)
-
-        modelBuilder.Entity(Of Promotion)() _
-            .HasMany(Function(e) e.Orders) _
-            .WithRequired(Function(e) e.Promotion) _
-            .HasForeignKey(Function(e) e.grantedPromotion) _
-            .WillCascadeOnDelete(False)
 
         modelBuilder.Entity(Of User)() _
             .HasMany(Function(e) e.Members) _
