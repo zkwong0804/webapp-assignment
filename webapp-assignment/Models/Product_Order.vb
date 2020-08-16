@@ -13,6 +13,8 @@ Partial Public Class Product_Order
 
     Public Property price As Decimal
 
+    Public Property quantity As Integer
+
     Public Overridable Property Order As Order
 
     Public Overridable Property Product1 As Product

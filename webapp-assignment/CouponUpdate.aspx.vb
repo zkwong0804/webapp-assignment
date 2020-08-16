@@ -20,17 +20,6 @@
         If Page.IsValid Then
 
             newCoupon.available = Master.Available
-            If Master.Category = -1 Then
-                newCoupon.category = Nothing
-            Else
-                newCoupon.category = Master.Category
-            End If
-
-            If Master.Product = -1 Then
-                newCoupon.product = Nothing
-            Else
-                newCoupon.product = Master.Product
-            End If
             newCoupon.description = Master.Description
             newCoupon.discountRate = Master.DiscountRate
             newCoupon.isFreeShipping = Master.FreeShipping

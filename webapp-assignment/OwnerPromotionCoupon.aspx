@@ -46,26 +46,6 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:TemplateField HeaderText="Product">
-                                    <ItemTemplate>
-                                        <asp:HyperLink ID="hlCategory" runat="server" 
-                                            Text="[Show product]" Target="_blank"
-                                            NavigateUrl='<%# String.Format("ProductView.aspx?id={0}", Item.product.ToString()) %>'>
-
-                                        </asp:HyperLink>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-
-                                <asp:TemplateField HeaderText="Category">
-                                    <ItemTemplate>
-                                        <asp:HyperLink ID="hlCategory" runat="server" 
-                                            Text="[Show category]" Target="_blank"
-                                            NavigateUrl='<%# String.Format("CategoryView.aspx?id={0}", Item.category.ToString()) %>'>
-
-                                        </asp:HyperLink>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-
                                 <asp:TemplateField HeaderText="Availability">
                                     <ItemTemplate>
                                         <asp:Label ID="lblAvailable" runat="server"

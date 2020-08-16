@@ -77,24 +77,6 @@ Partial Public Class CouponManage
     Protected WithEvents cvDiscount As Global.System.Web.UI.WebControls.CustomValidator
 
     '''<summary>
-    '''ddlProduct control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ddlProduct As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''ddlCategory control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ddlCategory As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''cbxAvailable control.
     '''</summary>
     '''<remarks>

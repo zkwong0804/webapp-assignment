@@ -69,9 +69,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalog</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown04">
                                 <a class="dropdown-item" href="shop.aspx">Shop</a>
-                                <a class="dropdown-item" href="product-single.aspx">Single Product</a>
-                                <a class="dropdown-item" href="cart.aspx">Cart</a>
-                                <a class="dropdown-item" href="checkout.aspx">Checkout</a>
+                                <a class="dropdown-item" href="ViewAll.aspx">View all</a>
                             </div>
                         </li>
                         <li class="nav-item"><a href="about.aspx" class="nav-link">About</a></li>
@@ -98,7 +96,7 @@
                         <%--<li class="nav-item"><a href="LoginRegister.aspx" class="nav-link">Login / Register</a></li>--%>
                         <li class="nav-item cta cta-colored">
                             <asp:LinkButton ID="lbtCart" runat="server" CssClass="nav-link" Visible="false">
-                                <span class="icon-shopping-cart"></span>[0]
+                                <span class="icon-shopping-cart"></span>[<asp:Label ID="lblCartTotal" runat="server"></asp:Label>]
                             </asp:LinkButton>
                         </li>
 

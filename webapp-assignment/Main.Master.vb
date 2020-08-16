@@ -1,13 +1,22 @@
 ﻿Public Class Main
     Inherits System.Web.UI.MasterPage
-
+    Dim dbCtx As New AssignmentDbContext()
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        'Session("member") = dbCtx.Members.Where(Function(f) f.User.email = "test@mail.com").SingleOrDefault()
+        'Session("userType") = "member"
+
         If Not IsNothing(Session("member")) Then
             'User already login
             lbtLogReg.Visible = False
             lbtAccount.Visible = True
             lbtLogout.Visible = True
             lbtCart.Visible = True
+            If IsNothing(Session("cart")) Then
+                lblCartTotal.Text = 0
+            Else
+                lblCartTotal.Text = CType(Session("cart"), List(Of Cart)).Count
+            End If
         Else
             lbtLogReg.Visible = True
             lbtAccount.Visible = False
@@ -31,7 +40,51 @@
     End Sub
 
     Protected Sub lbtCart_Click() Handles lbtCart.Click
-        Response.Redirect("cart.aspx")
+        Response.Redirect("Checkout.aspx")
     End Sub
+
+    Public Sub CheckCartSession()
+        If IsNothing(Session("cart")) Then
+            Session("cart") = New List(Of Cart)
+        End If
+    End Sub
+
+    Public Sub AddToCart(ByVal prod As Product, ByVal orderAmt As Integer)
+        If IsNothing(Session("userType")) Then
+            Response.Redirect("LoginRegister.aspx")
+        End If
+
+        CheckCartSession()
+        CType(Session("cart"), List(Of Cart)).Add(New Cart(prod, orderAmt))
+
+    End Sub
+
+    Public Sub RemoveCartItem(ByVal id As Integer)
+        Dim cartList = Me.CartList
+        Dim cart = cartList.Find(Function(f) f.Product.id = id)
+        cartList.Remove(cart)
+        Me.CartList = cartList
+    End Sub
+
+    Public Property CartList As List(Of Cart)
+        Get
+            Return CType(Session("cart"), List(Of Cart))
+        End Get
+        Set(value As List(Of Cart))
+            Session("cart") = value
+        End Set
+    End Property
+
+    Public Function CartTotal() As Decimal
+        Dim total As Decimal = 0
+        If Not IsNothing(Session("cart")) Then
+            For Each c As Cart In Me.CartList
+                total += c.Product.price * c.OrderAmt
+            Next
+
+        End If
+        Return total
+    End Function
+
 
 End Class

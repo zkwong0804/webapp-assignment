@@ -150,15 +150,21 @@
       <DependentUpon>Assignment.mdf</DependentUpon>
     </Content>
     <Content Include="CategoryAdd.aspx" />
+    <Content Include="CategoryNotFound2.aspx" />
+    <Content Include="CategoryPage.aspx" />
     <Content Include="CategoryUpdate.aspx" />
     <Content Include="CategoryView.aspx" />
+    <Content Include="Checkout.aspx" />
     <Content Include="CouponAdd.aspx" />
     <Content Include="CouponDelete.aspx" />
     <Content Include="CouponNotFound.aspx" />
     <Content Include="CouponUpdate.aspx" />
+    <Content Include="CustomControls\ProductThumb.ascx" />
     <Content Include="InsufficientCategory.aspx" />
     <Content Include="OwnerProduct.aspx" />
     <Content Include="OwnerPromotionCoupon.aspx" />
+    <Content Include="PaymentGateway.aspx" />
+    <Content Include="Product.aspx" />
     <Content Include="ProductAdd.aspx" />
     <Content Include="CategoryDelete.aspx" />
     <Content Include="ProductDelete.aspx" />
@@ -169,8 +175,6 @@
     <Content Include="OwnerPortal.aspx" />
     <Content Include="blog-single.aspx" />
     <Content Include="blog.aspx" />
-    <Content Include="cart.aspx" />
-    <Content Include="checkout.aspx" />
     <Content Include="contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -248,8 +252,10 @@
     <Content Include="Owner.Master" />
     <Content Include="ProductManage.master" />
     <Content Include="CategoryManage.master" />
+    <Content Include="ProductNotFound2.aspx" />
     <Content Include="ProductView.aspx" />
     <Content Include="CouponManage.master" />
+    <Content Include="ProductPage.master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="images\about.jpg" />
     <Content Include="images\bg_1.jpg" />
@@ -338,6 +344,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="shop.aspx" />
+    <Content Include="ViewAll.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
   </ItemGroup>
@@ -377,6 +384,20 @@
       <DependentUpon>CategoryManage.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="CategoryNotFound2.aspx.designer.vb">
+      <DependentUpon>CategoryNotFound2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryNotFound2.aspx.vb">
+      <DependentUpon>CategoryNotFound2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CategoryPage.aspx.designer.vb">
+      <DependentUpon>CategoryPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryPage.aspx.vb">
+      <DependentUpon>CategoryPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="CategoryUpdate.aspx.designer.vb">
       <DependentUpon>CategoryUpdate.aspx</DependentUpon>
     </Compile>
@@ -389,6 +410,13 @@
     </Compile>
     <Compile Include="CategoryView.aspx.vb">
       <DependentUpon>CategoryView.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.designer.vb">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout.aspx.vb">
+      <DependentUpon>Checkout.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="CouponAdd.aspx.designer.vb">
@@ -426,6 +454,13 @@
       <DependentUpon>CouponUpdate.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="CustomControls\ProductThumb.ascx.designer.vb">
+      <DependentUpon>ProductThumb.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ProductThumb.ascx.vb">
+      <DependentUpon>ProductThumb.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="InsufficientCategory.aspx.designer.vb">
       <DependentUpon>InsufficientCategory.aspx</DependentUpon>
     </Compile>
@@ -434,6 +469,7 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Models\AssignmentDbContext.vb" />
+    <Compile Include="Models\Cart.vb" />
     <Compile Include="Models\Category.vb" />
     <Compile Include="Models\Comment.vb" />
     <Compile Include="Models\Coupon.vb" />
@@ -455,6 +491,20 @@
     </Compile>
     <Compile Include="OwnerPromotionCoupon.aspx.vb">
       <DependentUpon>OwnerPromotionCoupon.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PaymentGateway.aspx.designer.vb">
+      <DependentUpon>PaymentGateway.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentGateway.aspx.vb">
+      <DependentUpon>PaymentGateway.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Product.aspx.designer.vb">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product.aspx.vb">
+      <DependentUpon>Product.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ProductAdd.aspx.designer.vb">
@@ -543,20 +593,6 @@
       <DependentUpon>blog.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="cart.aspx.designer.vb">
-      <DependentUpon>cart.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="cart.aspx.vb">
-      <DependentUpon>cart.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="checkout.aspx.designer.vb">
-      <DependentUpon>checkout.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="checkout.aspx.vb">
-      <DependentUpon>checkout.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="contact.aspx.designer.vb">
       <DependentUpon>contact.aspx</DependentUpon>
     </Compile>
@@ -636,6 +672,20 @@
       <DependentUpon>product-single.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="ProductNotFound2.aspx.designer.vb">
+      <DependentUpon>ProductNotFound2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductNotFound2.aspx.vb">
+      <DependentUpon>ProductNotFound2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ProductPage.master.designer.vb">
+      <DependentUpon>ProductPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPage.master.vb">
+      <DependentUpon>ProductPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="ProductUpdate.aspx.designer.vb">
       <DependentUpon>ProductUpdate.aspx</DependentUpon>
     </Compile>
@@ -662,6 +712,13 @@
     </Compile>
     <Compile Include="shop.aspx.vb">
       <DependentUpon>shop.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ViewAll.aspx.designer.vb">
+      <DependentUpon>ViewAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAll.aspx.vb">
+      <DependentUpon>ViewAll.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.vb">

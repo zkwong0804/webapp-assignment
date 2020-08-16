@@ -52,24 +52,6 @@
         End Set
     End Property
 
-    Public Property Product As Integer
-        Get
-            Return ddlProduct.SelectedValue
-        End Get
-        Set(value As Integer)
-            ddlProduct.Items.FindByValue(value.ToString()).Selected = True
-        End Set
-    End Property
-
-    Public Property Category As Integer
-        Get
-            Return ddlCategory.SelectedValue
-        End Get
-        Set(value As Integer)
-            ddlCategory.Items.FindByValue(value.ToString()).Selected = True
-        End Set
-    End Property
-
     Public Property Available As Boolean
         Get
             Return cbxAvailable.Checked
@@ -82,17 +64,8 @@
     Public Function GetCoupon() As Coupon
         Dim coupon As New Coupon()
         coupon.available = Me.Available
-        If Me.Category = -1 Then
-            coupon.category = Nothing
-        Else
-            coupon.category = Me.Category
-        End If
-
-        If Me.Product = -1 Then
-            coupon.product = Nothing
-        Else
-            coupon.product = Me.Product
-        End If
+        coupon.category = Nothing
+        coupon.product = Nothing
         coupon.description = Me.Description
         coupon.discountRate = Me.DiscountRate
         coupon.isFreeShipping = Me.FreeShipping
@@ -104,18 +77,6 @@
 
     Public Sub SetCoupon(ByVal coupon As Coupon)
         Me.Available = coupon.available
-        If IsNothing(coupon.category) Then
-            Me.Category = -1
-        Else
-            Me.Category = coupon.category
-        End If
-
-        If IsNothing(coupon.product) Then
-            Me.Product = -1
-        Else
-            Me.Product = coupon.product
-        End If
-
         Me.Description = coupon.description
         Me.DiscountRate = coupon.discountRate
         Me.FreeShipping = coupon.isFreeShipping
@@ -123,15 +84,6 @@
     End Sub
 
     Private Sub CouponManage_Init(sender As Object, e As EventArgs) Handles Me.Init
-        ddlCategory.DataSource = dbCtx.Categories.ToList()
-        ddlCategory.DataTextField = "name"
-        ddlCategory.DataValueField = "id"
 
-        ddlProduct.DataSource = dbCtx.Products.ToList()
-        ddlProduct.DataTextField = "name"
-        ddlProduct.DataValueField = "id"
-
-        ddlCategory.DataBind()
-        ddlProduct.DataBind()
     End Sub
 End Class
