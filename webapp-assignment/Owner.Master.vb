@@ -4,6 +4,9 @@
     Dim dbCtx As New AssignmentDbContext()
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'Session("member") = dbCtx.Owners.Where(Function(f) f.User.email = "tommy04081996@1utar.my").SingleOrDefault()
+        'Session("userType") = "owner"
+
         If IsNothing(Session("userType")) Or Session("userType") <> "owner" Then
             Response.Redirect("AccessDenied.aspx")
         End If

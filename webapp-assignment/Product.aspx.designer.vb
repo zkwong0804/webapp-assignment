@@ -59,6 +59,51 @@ Partial Public Class Product1
     Protected WithEvents lbtBuyNow As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
+    '''lvPostedcomments control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lvPostedcomments As Global.System.Web.UI.WebControls.ListView
+
+    '''<summary>
+    '''tbxReview control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tbxReview As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ddlRate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlRate As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''fupReview control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents fupReview As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
+    '''btnPost control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnPost As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Master property.
     '''</summary>
     '''<remarks>

@@ -32,20 +32,9 @@ Partial Public Class AssignmentDbContext
             .HasForeignKey(Function(e) e.category) _
             .WillCascadeOnDelete(False)
 
-        modelBuilder.Entity(Of Comment)() _
-            .HasMany(Function(e) e.Comment11) _
-            .WithOptional(Function(e) e.Comment2) _
-            .HasForeignKey(Function(e) e.replyTo)
-
         modelBuilder.Entity(Of Coupon)() _
             .Property(Function(e) e.discountRate) _
             .HasPrecision(12, 2)
-
-        modelBuilder.Entity(Of Coupon)() _
-            .HasMany(Function(e) e.Orders) _
-            .WithRequired(Function(e) e.Coupon) _
-            .HasForeignKey(Function(e) e.grantedCoupon) _
-            .WillCascadeOnDelete(False)
 
         modelBuilder.Entity(Of Member)() _
             .HasMany(Function(e) e.Comments) _
@@ -71,6 +60,11 @@ Partial Public Class AssignmentDbContext
         modelBuilder.Entity(Of Product)() _
             .Property(Function(e) e.price) _
             .HasPrecision(12, 2)
+
+        modelBuilder.Entity(Of Product)() _
+            .HasMany(Function(e) e.Comments) _
+            .WithOptional(Function(e) e.Product1) _
+            .HasForeignKey(Function(e) e.product)
 
         modelBuilder.Entity(Of Product)() _
             .HasMany(Function(e) e.Product_Order) _

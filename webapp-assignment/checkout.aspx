@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Main.Master" CodeBehind="Checkout.aspx.vb" Inherits="webapp_assignment.Checkout1" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Main.Master" CodeBehind="Checkout.aspx.vb" Inherits="webapp_assignment.Checkout1" EnableViewState="true" ViewStateMode="Enabled" %>
 
 <%@ MasterType VirtualPath="~/Main.Master" %>
 

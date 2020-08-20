@@ -1,4 +1,4 @@
-﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Main.master.vb" Inherits="webapp_assignment.Main" %>
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Main.master.vb" Inherits="webapp_assignment.Main" EnableViewState="true" ViewStateMode="Enabled" %>
 
 <!DOCTYPE html>
 
@@ -65,15 +65,36 @@
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active"><a href="Default.aspx" class="nav-link">Home</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalog</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown04">
-                                <a class="dropdown-item" href="shop.aspx">Shop</a>
-                                <a class="dropdown-item" href="ViewAll.aspx">View all</a>
-                            </div>
-                        </li>
-                        <li class="nav-item"><a href="about.aspx" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="ViewAll.aspx" class="nav-link">Products</a></li>
                         <li class="nav-item"><a href="contact.aspx" class="nav-link">Contact</a></li>
+
+
+                        <% If Not IsNothing(Session("member")) Then %>
+                        <li class="nav-item">
+                            <asp:LinkButton ID="lbtAccount"
+                                runat="server"
+                                CssClass="nav-link"
+                                Text="Account"></asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="OrderCheck.aspx" class="nav-link">Check order</a>
+                        </li>
+
+                        <%--<li class="nav-item"><a href="LoginRegister.aspx" class="nav-link">Login / Register</a></li>--%>
+                        <li class="nav-item cta cta-colored">
+                            <asp:LinkButton ID="lbtCart" runat="server" CssClass="nav-link">
+                                    <span class="icon-shopping-cart"></span>[<%= If(IsNothing(Session("cart")), 0, CartList.Count) %>]
+                            </asp:LinkButton>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <asp:LinkButton ID="lbtLogout"
+                                runat="server"
+                                CssClass="nav-link"
+                                Text="Logout"></asp:LinkButton>
+                        </li>
+                        <% Else %>
                         <li class="nav-item">
                             <asp:LinkButton ID="lbtLogReg"
                                 runat="server"
@@ -81,25 +102,7 @@
                                 Text="Login / Register"></asp:LinkButton>
 
                         </li>
-                        <li class="nav-item">
-                            <asp:LinkButton ID="lbtAccount"
-                                runat="server"
-                                CssClass="nav-link"
-                                Text="Account" Visible="false"></asp:LinkButton>
-                        </li>
-                        <li class="nav-item">
-                            <asp:LinkButton ID="lbtLogout"
-                                runat="server"
-                                CssClass="nav-link"
-                                Text="Logout" Visible="false"></asp:LinkButton>
-                        </li>
-                        <%--<li class="nav-item"><a href="LoginRegister.aspx" class="nav-link">Login / Register</a></li>--%>
-                        <li class="nav-item cta cta-colored">
-                            <asp:LinkButton ID="lbtCart" runat="server" CssClass="nav-link" Visible="false">
-                                <span class="icon-shopping-cart"></span>[<asp:Label ID="lblCartTotal" runat="server"></asp:Label>]
-                            </asp:LinkButton>
-                        </li>
-
+                        <% End If %>
                     </ul>
                 </div>
             </div>

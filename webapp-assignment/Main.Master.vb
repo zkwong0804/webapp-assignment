@@ -3,26 +3,8 @@
     Dim dbCtx As New AssignmentDbContext()
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        'Session("member") = dbCtx.Members.Where(Function(f) f.User.email = "test@mail.com").SingleOrDefault()
-        'Session("userType") = "member"
-
-        If Not IsNothing(Session("member")) Then
-            'User already login
-            lbtLogReg.Visible = False
-            lbtAccount.Visible = True
-            lbtLogout.Visible = True
-            lbtCart.Visible = True
-            If IsNothing(Session("cart")) Then
-                lblCartTotal.Text = 0
-            Else
-                lblCartTotal.Text = CType(Session("cart"), List(Of Cart)).Count
-            End If
-        Else
-            lbtLogReg.Visible = True
-            lbtAccount.Visible = False
-            lbtAccount.Visible = False
-            lbtCart.Visible = False
-        End If
+        'Session("member") = dbCtx.Owners.Where(Function(f) f.User.email = "tommy04081996@1utar.my").SingleOrDefault()
+        'Session("userType") = "owner"
     End Sub
 
     Protected Sub lbtLogReg_Click() Handles lbtLogReg.Click

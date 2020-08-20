@@ -6,6 +6,12 @@
     Dim dbCtx As New AssignmentDbContext()
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        Me.ShippingFee = If(IsNothing(Session("shipping")), 12, CDec(Session("shipping")))
+        Me.GrantedCoupon = Session("coupon")
+
+        If Not IsNothing(Session("order")) Then
+            Response.Redirect("PaymentGateway.aspx")
+        End If
         If Not Page.IsPostBack Then
             Me.ShippingFee = 12
         End If
@@ -31,21 +37,22 @@
     Protected Sub lbtMakePpayment_Click() Handles lbtMakePayment.Click
         Dim order As New Order()
         Dim member As Member = CType(Session("member"), Member)
-        order.Member1 = member
-        order.Coupon = Me.GrantedCoupon
+        order.member = member.id
+        order.grantedCoupon = If(IsNothing(Me.GrantedCoupon), Nothing, Me.GrantedCoupon.id)
         order._date = Date.Today
         order.shippingAddress = member.address
         order.isShipped = False
         order.status = "pending"
-        order.total = Me.GrandTotal()
-        For Each c As Cart In Master.CartList
-            Dim po As New Product_Order()
-            po.Product1 = c.Product
-            po.price = c.Product.price
-            po.quantity = c.OrderAmt
-            order.Product_Order.Add(po)
-        Next
-        Session("order") = order
+        order.total = Me.Total
+
+        Debug.WriteLine($"shipping fee: {Me.ShippingFee}")
+        Dim orderDict As New Dictionary(Of String, Object)
+        orderDict.Add("total", Me.Total)
+        orderDict.Add("shipping", Me.ShippingFee)
+        orderDict.Add("discount", Me.DiscountAmt())
+        orderDict.Add("grandTotal", Me.GrandTotal())
+        orderDict.Add("order", order)
+        Session("order") = orderDict
         Response.Redirect("PaymentGateway.aspx")
     End Sub
 
@@ -66,7 +73,6 @@
 
     Protected Sub RemoveCartItem(sender As Object, e As CommandEventArgs)
         Master.RemoveCartItem(Integer.Parse(e.CommandArgument.ToString()))
-        Debug.WriteLine($"Cart list count: {Master.CartList.Count}")
         UpdatePage()
     End Sub
 
@@ -109,6 +115,7 @@
             Return Me._coupon
         End Get
         Set(value As Coupon)
+            Session("coupon") = value
             Me._coupon = value
         End Set
     End Property
@@ -118,6 +125,7 @@
             Return Me._shippingFee
         End Get
         Set(value As Decimal)
+            Session("shipping") = value
             Me._shippingFee = value
         End Set
     End Property

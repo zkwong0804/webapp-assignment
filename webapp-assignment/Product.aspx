@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Main.Master" CodeBehind="Product.aspx.vb" Inherits="webapp_assignment.Product1" %>
+
 <%@ MasterType VirtualPath="~/Main.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+
     <section class="ftco-section">
         <div class="container">
             <div class="row">
@@ -24,19 +25,21 @@
                                     <i class="ion-ios-remove"></i>
                                 </button>
                             </span>
-                            
+
                             <asp:TextBox ID="tbxQuantity" CssClass="quantity form-control input-number" Text="1" runat="server" ClientIDMode="Static"></asp:TextBox>
                             <span class="input-group-btn ml-2">
                                 <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
                                     <i class="ion-ios-add"></i>
                                 </button>
-                            </span> <br />
+                            </span>
+                            <br />
                             <asp:RequiredFieldValidator ID="rfvQuantity" runat="server" ControlToValidate="tbxQuantity" ErrorMessage="This field is required!" ForeColor="Red">
 
-                            </asp:RequiredFieldValidator> <br />
-                            <asp:CustomValidator ID="cvQuantity" runat="server" 
-                                ControlToValidate="tbxQuantity" 
-                                ErrorMessage="Invalid quantity" 
+                            </asp:RequiredFieldValidator>
+                            <br />
+                            <asp:CustomValidator ID="cvQuantity" runat="server"
+                                ControlToValidate="tbxQuantity"
+                                ErrorMessage="Invalid quantity"
                                 ForeColor="Red" OnServerValidate="cvQuantity_ServerValidate"></asp:CustomValidator>
                         </div>
                         <div class="w-100"></div>
@@ -76,128 +79,72 @@
                         <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
                             <div class="row p-4">
                                 <div class="col-md-7">
-                                    <h3 class="mb-4">23 Reviews</h3>
-                                    <div class="review">
-                                        <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
-                                        <div class="desc">
-                                            <h4>
-                                                <span class="text-left">Jacob Webb</span>
-                                                <span class="text-right">14 March 2018</span>
-                                            </h4>
-                                            <p class="star">
-                                                <span>
-                                                    <i class="ion-ios-star-outline"></i>
-                                                    <i class="ion-ios-star-outline"></i>
-                                                    <i class="ion-ios-star-outline"></i>
-                                                    <i class="ion-ios-star-outline"></i>
-                                                    <i class="ion-ios-star-outline"></i>
-                                                </span>
-                                                <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-                                            </p>
-                                            <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
-                                        </div>
-                                    </div>
-                                    <div class="review">
-                                        <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
-                                        <div class="desc">
-                                            <h4>
-                                                <span class="text-left">Jacob Webb</span>
-                                                <span class="text-right">14 March 2018</span>
-                                            </h4>
-                                            <p class="star">
-                                                <span>
-                                                    <i class="ion-ios-star-outline"></i>
-                                                    <i class="ion-ios-star-outline"></i>
-                                                    <i class="ion-ios-star-outline"></i>
-                                                    <i class="ion-ios-star-outline"></i>
-                                                    <i class="ion-ios-star-outline"></i>
-                                                </span>
-                                                <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-                                            </p>
-                                            <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
-                                        </div>
-                                    </div>
-                                    <div class="review">
-                                        <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
-                                        <div class="desc">
-                                            <h4>
-                                                <span class="text-left">Jacob Webb</span>
-                                                <span class="text-right">14 March 2018</span>
-                                            </h4>
-                                            <p class="star">
-                                                <span>
-                                                    <i class="ion-ios-star-outline"></i>
-                                                    <i class="ion-ios-star-outline"></i>
-                                                    <i class="ion-ios-star-outline"></i>
-                                                    <i class="ion-ios-star-outline"></i>
-                                                    <i class="ion-ios-star-outline"></i>
-                                                </span>
-                                                <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-                                            </p>
-                                            <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
-                                        </div>
-                                    </div>
+                                    <h3 class="mb-4"><%= GetTotalReviews() %> Reviews</h3>
+                                    <asp:ListView ID="lvPostedcomments" runat="server" ItemType="webapp_assignment.Comment" SelectMethod="lvPostedcomments_GetData">
+                                        <ItemTemplate>
+                                            <div class="review">
+                                                <div class="user-img" style="background-image: url(images/userp.png)"></div>
+                                                <div class="desc">
+                                                    <h4>
+                                                        <span class="text-left"><%# Item.Member.User.name %></span>
+                                                        <span class="text-right"></span>
+                                                    </h4>
+                                                    <p class="star">
+                                                        <span>has given this product a 
+                                                                <%# Item.rate %> 
+                                                                <i class="ion-ios-star"></i>
+                                                        </span>
+                                                    </p>
+                                                    <p>
+                                                        <img src='<%# Item.pictureLoc.Substring(1)  %>' width="300" height="500" />
+                                                    </p>
+                                                    <p>
+                                                        <%# Item.comment1 %>
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </ItemTemplate>
+                                    </asp:ListView>
                                 </div>
+
+                                
+                                <% If HasBoughtBefore() Then %>
+                                <%--Give a review--%>
                                 <div class="col-md-4">
                                     <div class="rating-wrap">
                                         <h3 class="mb-4">Give a Review</h3>
-                                        <p class="star">
-                                            <span>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                (98%)
-                                            </span>
-                                            <span>20 Reviews</span>
-                                        </p>
-                                        <p class="star">
-                                            <span>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                (85%)
-                                            </span>
-                                            <span>10 Reviews</span>
-                                        </p>
-                                        <p class="star">
-                                            <span>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                (98%)
-                                            </span>
-                                            <span>5 Reviews</span>
-                                        </p>
-                                        <p class="star">
-                                            <span>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                (98%)
-                                            </span>
-                                            <span>0 Reviews</span>
-                                        </p>
-                                        <p class="star">
-                                            <span>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                (98%)
-                                            </span>
-                                            <span>0 Reviews</span>
-                                        </p>
+                                        <div class="form-group">
+                                            <label for="tbxReview">Write your review here:</label>
+                                            <asp:TextBox ID="tbxReview" runat="server"
+                                                TextMode="MultiLine"
+                                                ClientIDMode="Static" CssClass="form-control">
+                                            </asp:TextBox>
+
+                                            <asp:RequiredFieldValidator runat="server" ControlToValidate="tbxReview"
+                                                ValidationGroup="review" ErrorMessage="This field is requried!" ForeColor="Red">
+                                            </asp:RequiredFieldValidator>
+                                        </div>
+
+                                        <label for="ddlRate">Rate: </label>
+                                        <asp:DropDownList ID="ddlRate" runat="server" ClientIDMode="Static">
+                                            <asp:ListItem Value="1">1</asp:ListItem>
+                                            <asp:ListItem Value="2">2</asp:ListItem>
+                                            <asp:ListItem Value="3">3</asp:ListItem>
+                                            <asp:ListItem Value="4">4</asp:ListItem>
+                                            <asp:ListItem Value="5">5</asp:ListItem>
+                                        </asp:DropDownList>
+
+                                        <asp:FileUpload ID="fupReview" runat="server" />
+                                        <asp:RequiredFieldValidator runat="server" ControlToValidate="fupReview"
+                                            ErrorMessage="You must upload a photo of your received product!" ValidationGroup="review"
+                                            ForeColor="Red"></asp:RequiredFieldValidator>
+
+                                        <asp:Button ID="btnPost" runat="server" OnClick="btnPost_Click" ClientIDMode="Static"
+                                            Text="Post review" ValidationGroup="review" />
                                     </div>
                                 </div>
+                                <% End If %>
                             </div>
                         </div>
                     </div>
@@ -211,6 +158,11 @@
         $(document).ready(function () {
 
             var quantitiy = 0;
+
+            $("#btnPost").click(function (e) {
+                alert("Thanks for review and comment our product!")
+            });
+
             $('.quantity-right-plus').click(function (e) {
 
                 // Stop acting like a button
@@ -243,7 +195,7 @@
 
             $("#lbtAddCart").click(function (e) {
                 <% If Not IsNothing(Session("userType")) Then%>
-                    alert("You have added this item to cart already!");
+                alert("You have added this item to cart already!");
                 <%End If%>
             })
 

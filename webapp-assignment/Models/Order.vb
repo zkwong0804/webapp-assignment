@@ -25,9 +25,7 @@ Partial Public Class Order
 
     Public Property member As Integer
 
-    Public Property grantedCoupon As Integer
-
-    Public Overridable Property Coupon As Coupon
+    Public Property grantedCoupon As Integer?
 
     Public Overridable Property Member1 As Member
 

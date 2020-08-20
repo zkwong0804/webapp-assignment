@@ -7,6 +7,7 @@ Imports System.Data.Entity.Spatial
 <Table("Product")>
 Partial Public Class Product
     Public Sub New()
+        Comments = New HashSet(Of Comment)()
         Product_Order = New HashSet(Of Product_Order)()
     End Sub
 
@@ -27,6 +28,8 @@ Partial Public Class Product
     Public Property category As Integer
 
     Public Overridable Property Category1 As Category
+
+    Public Overridable Property Comments As ICollection(Of Comment)
 
     Public Overridable Property Product_Order As ICollection(Of Product_Order)
 End Class

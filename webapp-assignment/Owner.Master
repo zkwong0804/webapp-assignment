@@ -68,6 +68,16 @@
                         <li class="nav-item"><a href="OwnerCategory.aspx" class="nav-link">Category</a></li>
                         <li class="nav-item"><a href="OwnerProduct.aspx" class="nav-link">Product</a></li>
                         <li class="nav-item"><a href="OwnerPromotionCoupon.aspx" class="nav-link">Coupons</a></li>
+                        <li class="nav-item"><a href="OrderCheck.aspx" class="nav-link">Orders</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reports</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                <a class="dropdown-item" href="ReportTotalSales.aspx">Total sales</a>
+                                <a class="dropdown-item" href="ReportProductsSold.aspx">Products sold</a>
+                                <a class="dropdown-item" href="ReportStock.aspx">Stock report</a>
+                                <a class="dropdown-item" href="ReportProductComments.aspx">Products comments</a>
+                            </div>
+                        </li>
                         <li class="nav-item">
                             <asp:LinkButton ID="lbtLogout"
                                 runat="server"

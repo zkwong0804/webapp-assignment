@@ -41,15 +41,6 @@ Partial Public Class Main
     Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
 
     '''<summary>
-    '''lbtLogReg control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lbtLogReg As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
     '''lbtAccount control.
     '''</summary>
     '''<remarks>
@@ -57,15 +48,6 @@ Partial Public Class Main
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbtAccount As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''lbtLogout control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lbtLogout As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
     '''lbtCart control.
@@ -77,13 +59,22 @@ Partial Public Class Main
     Protected WithEvents lbtCart As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''lblCartTotal control.
+    '''lbtLogout control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblCartTotal As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbtLogout As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''lbtLogReg control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbtLogReg As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
     '''ContentPlaceHolder1 control.

@@ -6,10 +6,6 @@ Imports System.Data.Entity.Spatial
 
 <Table("Comment")>
 Partial Public Class Comment
-    Public Sub New()
-        Comment11 = New HashSet(Of Comment)()
-    End Sub
-
     Public Property id As Integer
 
     Public Property rate As Integer?
@@ -21,11 +17,9 @@ Partial Public Class Comment
 
     Public Property creator As Integer
 
-    Public Property replyTo As Integer?
+    Public Property product As Integer?
 
     Public Overridable Property Member As Member
 
-    Public Overridable Property Comment11 As ICollection(Of Comment)
-
-    Public Overridable Property Comment2 As Comment
+    Public Overridable Property Product1 As Product
 End Class
