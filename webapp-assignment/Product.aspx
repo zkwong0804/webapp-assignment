@@ -49,7 +49,9 @@
                     </div>
                     <p>
                         <asp:LinkButton ID="lbtAddCart" runat="server" CssClass="btn btn-black py-3 px-5 mr-2" ClientIDMode="Static">Add to Cart</asp:LinkButton>
-                        <asp:LinkButton ID="lbtBuyNow" runat="server" CssClass="btn btn-primary py-3 px-5" ClientIDMode="Static">Buy Now</asp:LinkButton>
+                        <asp:LinkButton ID="lbtBuyNow" runat="server" CssClass="btn btn-primary py-3 px-5" ClientIDMode="Static">Buy Now</asp:LinkButton> <br />
+                        
+                        <asp:Label ID="lblStockMsg" runat="server" ForeColor="Red" Text="Not enough stock" Visible="false"></asp:Label>
                     </p>
                 </div>
             </div>
@@ -192,12 +194,6 @@
                     $('#tbxQuantity').val(quantity - 1);
                 }
             });
-
-            $("#lbtAddCart").click(function (e) {
-                <% If Not IsNothing(Session("userType")) Then%>
-                alert("You have added this item to cart already!");
-                <%End If%>
-            })
 
         });
     </script>

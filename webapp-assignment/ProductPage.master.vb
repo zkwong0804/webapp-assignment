@@ -14,10 +14,10 @@
         accordion.Attributes.Add("aria-multiselectable", "true")
     End Sub
 
-    Public Sub SetCategories(ByVal parent As Category)
+    Public Sub SetCategories(ByVal cats As List(Of Category))
         accordion.Controls.Clear()
         Dim ul As New HtmlGenericControl("ul")
-        For Each cat As Category In parent.Category11
+        For Each cat As Category In cats
             Dim hl As New HyperLink()
             Dim li As New HtmlGenericControl("li")
             hl.Text = cat.name

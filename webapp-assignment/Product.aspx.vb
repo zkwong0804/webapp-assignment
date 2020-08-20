@@ -27,15 +27,25 @@ Public Class Product1
 
     Public Sub lbtAddCart_Click() Handles lbtAddCart.Click
         If Page.IsValid Then
-            Master.AddToCart(SelectedProduct, Integer.Parse(tbxQuantity.Text))
-            Response.Redirect("ViewAll.aspx")
+            Dim q As Integer = Integer.Parse(tbxQuantity.Text)
+            If SelectedProduct.category > q Then
+                Master.AddToCart(SelectedProduct, Integer.Parse(tbxQuantity.Text))
+                Response.Redirect("ViewAll.aspx")
+            Else
+                lblStockMsg.Visible = True
+            End If
         End If
     End Sub
 
     Public Sub lbtBuyNow_Click() Handles lbtBuyNow.Click
         If Page.IsValid Then
-            Master.AddToCart(SelectedProduct, Integer.Parse(tbxQuantity.Text))
-            Response.Redirect("Checkout.aspx")
+            Dim q As Integer = Integer.Parse(tbxQuantity.Text)
+            If SelectedProduct.category > q Then
+                Master.AddToCart(SelectedProduct, Integer.Parse(tbxQuantity.Text))
+                Response.Redirect("Checkout.aspx")
+            Else
+                lblStockMsg.Visible = True
+            End If
         End If
     End Sub
 
@@ -94,7 +104,7 @@ Public Class Product1
         End If
         Dim _id As Integer = Request.QueryString.Get("id")
         Dim _mid As Integer = CType(Session("member"), Member).id
-        Dim _po As Product_Order = dbCtx.Product_Order.Where(Function(f) f.product = _id And f.Order.member = _mid).SingleOrDefault()
+        Dim _po As Product_Order = dbCtx.Product_Order.Where(Function(f) f.product = _id And f.Order.member = _mid).FirstOrDefault()
 
         Return Not IsNothing(_po)
     End Function

@@ -27,7 +27,6 @@
     Protected Sub lbtMakePayment_Click() Handles lbtMakePayment.Click
         Dim order As Order = CType(Me.OrderDict.Item("order"), Order)
 
-
         dbCtx.Orders.Add(order)
         dbCtx.SaveChanges()
         For Each c As Cart In Master.CartList
@@ -40,6 +39,14 @@
         Next
 
         dbCtx.SaveChanges()
+
+        For Each po As Product_Order In order.Product_Order
+            Dim p As Product = dbCtx.Products.Where(Function(f) f.id = po.product).SingleOrDefault()
+            p.amt = p.amt - po.quantity
+        Next
+
+        dbCtx.SaveChanges()
+
         clearSessions()
         Response.Redirect("PurchaseSuccess.aspx")
     End Sub

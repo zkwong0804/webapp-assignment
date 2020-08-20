@@ -9,6 +9,12 @@
             Response.Redirect("CategoryNotFound2.aspx")
         End If
         Master.Heading = category.name
-        Master.SetCategories(category)
+        Dim products As List(Of Product) = dbCtx.Products.Where(Function(f) f.isAvailable And f.category = id).ToList()
+
+        For Each p As Product In products
+            Dim pt As ProductThumb = LoadControl("~/CustomControls/ProductThumb.ascx")
+            pt.Product = p
+            pnlProducts.Controls.Add(pt)
+        Next
     End Sub
 End Class

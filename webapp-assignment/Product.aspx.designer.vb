@@ -59,6 +59,15 @@ Partial Public Class Product1
     Protected WithEvents lbtBuyNow As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
+    '''lblStockMsg control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblStockMsg As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''lvPostedcomments control.
     '''</summary>
     '''<remarks>
