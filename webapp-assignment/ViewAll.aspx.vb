@@ -11,9 +11,11 @@
         Next
         Master.SetCategories(cats)
         Master.Heading = "All Products"
-        products = dbCtx.Products.Where(Function(f) f.isAvailable).ToList()
 
-        For Each p As Product In products
+        Dim min As Decimal = Master.GetMinPrice
+        Dim max As Decimal = Master.GetMaxPrice
+        Dim selection As List(Of Product) = dbCtx.Products.Where(Function(f) f.isAvailable And f.price >= min And f.price <= max).ToList()
+        For Each p As Product In selection
             Dim pt As ProductThumb = LoadControl("~/CustomControls/ProductThumb.ascx")
             pt.Product = p
             pnlProducts.Controls.Add(pt)
@@ -23,4 +25,17 @@
 
     Private Sub ViewAll_Init(sender As Object, e As EventArgs) Handles Me.Init
     End Sub
+
+    'Private Sub CheckPrice()
+    '    Dim min As Integer = CInt(ddlMinPrice.SelectedValue)
+    '    Dim max As Integer = CInt(ddlMaxPrice.SelectedValue)
+    '    If min < max Then
+    '        lblPriceInvalid.Visible = False
+    '        MinPrice = min
+    '        MaxPrice = max
+    '    Else
+    '        lblPriceInvalid.Visible = True
+    '    End If
+
+    'End Sub
 End Class

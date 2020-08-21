@@ -32,6 +32,12 @@
             <div class="row block-9">
                 <div class="col-md-12 order-md-last d-flex">
                     <asp:Button ID="btnAdd" runat="server" Text="New product" />
+                    <asp:Button ID="btnShopee" runat="server" Text="Shopee import" OnClick="btnShopee_Click" />
+                    <asp:Button ID="btnBulk" runat="server" Text="Excel bulk import" OnClick="btnBulk_Click" ValidationGroup="excelbulk"/>
+                    <asp:FileUpload ID="fupBulk" runat="server" />
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="fupBulk" 
+                        ErrorMessage="You must upload an excel doc in order to perform bulk upload!" 
+                        ForeColor="Red" ValidationGroup="excelbulk"></asp:RequiredFieldValidator>
                 </div>
             </div>
         </div>

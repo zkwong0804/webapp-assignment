@@ -9,7 +9,9 @@
             Response.Redirect("CategoryNotFound2.aspx")
         End If
         Master.Heading = category.name
-        Dim products As List(Of Product) = dbCtx.Products.Where(Function(f) f.isAvailable And f.category = id).ToList()
+        Dim min As Decimal = Master.GetMinPrice
+        Dim max As Decimal = Master.GetMaxPrice
+        Dim products As List(Of Product) = dbCtx.Products.Where(Function(f) f.isAvailable And f.category = id And f.price >= min And f.price <= max).ToList()
 
         For Each p As Product In products
             Dim pt As ProductThumb = LoadControl("~/CustomControls/ProductThumb.ascx")

@@ -1,4 +1,6 @@
-﻿Public Class OwnerProduct
+﻿Imports Microsoft.Office.Interop
+
+Public Class OwnerProduct
     Inherits System.Web.UI.Page
     Dim dbCtx As New AssignmentDbContext()
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -65,4 +67,66 @@
         Response.Redirect("ProductAdd.aspx")
     End Sub
 
+    Protected Sub btnBulk_Click(sender As Object, e As EventArgs)
+
+        If Page.IsValid Then
+            Dim fileloc As String = Server.MapPath(fupBulk.PostedFile.FileName)
+            fupBulk.SaveAs(fileloc)
+            Dim xlApp As New Excel.Application
+            Dim xlWorkBook As Excel.Workbook = xlApp.Workbooks.Open(fileloc)
+            Dim xlWorkSheet As Excel.Worksheet = xlWorkBook.Worksheets("sheet1")
+
+            Dim i As Integer = 2
+            While Not IsNothing(xlWorkSheet.Cells(i, 1).value)
+                Dim newProd As New Product()
+
+                newProd.name = xlWorkSheet.Cells(i, 1).value.ToString()
+                newProd.price = Decimal.Parse(xlWorkSheet.Cells(i, 2).value)
+                newProd.amt = Integer.Parse(xlWorkSheet.Cells(i, 3).value)
+                newProd.description = xlWorkSheet.Cells(i, 4).value.ToString()
+                newProd.isAvailable = True
+                newProd.imageLoc = "~/images/Products/Default.png"
+
+                Dim catName As String = xlWorkSheet.Cells(i, 5).value.ToString()
+                Dim checkCat As Category = dbCtx.Categories.Where(Function(f) f.name = catName).SingleOrDefault()
+                If Not IsNothing(checkCat) Then
+                    newProd.category = checkCat.id
+                Else
+                    Dim newCat As New Category()
+                    newCat.name = catName
+                    newCat.category1 = 1
+                    newCat.isAvailable = True
+                    dbCtx.Categories.Add(newCat)
+                    dbCtx.SaveChanges()
+                    newProd.category = newCat.id
+                End If
+                dbCtx.Products.Add(newProd)
+                i += 1
+            End While
+
+            xlWorkBook.Close()
+            xlApp.Quit()
+
+            releaseObject(xlApp)
+            releaseObject(xlWorkBook)
+            releaseObject(xlWorkSheet)
+
+            dbCtx.SaveChanges()
+            Response.Redirect("OwnerProduct.aspx")
+        End If
+    End Sub
+    Private Sub releaseObject(ByVal obj As Object)
+        Try
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+            obj = Nothing
+        Catch ex As Exception
+            obj = Nothing
+        Finally
+            GC.Collect()
+        End Try
+    End Sub
+
+    Protected Sub btnShopee_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

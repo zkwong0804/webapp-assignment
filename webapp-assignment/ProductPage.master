@@ -53,13 +53,16 @@
                                             <label for="guests">Price from:</label>
                                             <div class="form-field">
                                                 <i class="icon icon-arrow-down3"></i>
-                                                <select name="people" id="people" class="form-control">
-                                                    <option value="#">1</option>
-                                                    <option value="#">200</option>
-                                                    <option value="#">300</option>
-                                                    <option value="#">400</option>
-                                                    <option value="#">1000</option>
-                                                </select>
+
+                                                <asp:DropDownList ID="ddlMinPrice" runat="server" 
+                                                    OnSelectedIndexChanged="ddlMinPrice_SelectedIndexChanged" CssClass="form-control">
+                                                    <asp:ListItem Value="0">0</asp:ListItem>
+                                                    <asp:ListItem Value="100">100</asp:ListItem>
+                                                    <asp:ListItem Value="200">200</asp:ListItem>
+                                                    <asp:ListItem Value="300">300</asp:ListItem>
+                                                    <asp:ListItem Value="400">400</asp:ListItem>
+                                                    <asp:ListItem Value="500">500</asp:ListItem>
+                                                </asp:DropDownList>
                                             </div>
                                         </div>
                                     </div>
@@ -68,13 +71,23 @@
                                             <label for="guests">Price to:</label>
                                             <div class="form-field">
                                                 <i class="icon icon-arrow-down3"></i>
-                                                <select name="people" id="people" class="form-control">
-                                                    <option value="#">2000</option>
-                                                    <option value="#">4000</option>
-                                                    <option value="#">6000</option>
-                                                    <option value="#">8000</option>
-                                                    <option value="#">10000</option>
-                                                </select>
+                                                <asp:DropDownList ID="ddlMaxPrice" runat="server" 
+                                                    OnSelectedIndexChanged="ddlMaxPrice_SelectedIndexChanged" CssClass="form-control">
+                                                    <asp:ListItem Value="100">100</asp:ListItem>
+                                                    <asp:ListItem Value="200">200</asp:ListItem>
+                                                    <asp:ListItem Value="300">300</asp:ListItem>
+                                                    <asp:ListItem Value="400">400</asp:ListItem>
+                                                    <asp:ListItem Value="500">500</asp:ListItem>
+                                                    <asp:ListItem Value="1000" Selected="True">1000</asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="form-field">
+                                                <asp:Button ID="btnSearchPrice" runat="server" Text="Search" OnClick="btnSearchPrice_Click" />
+                                                <asp:Label ID="lblPriceInvalid" runat="server" Text="Invalid price range" Visible="false" ForeColor="Red"></asp:Label>
                                             </div>
                                         </div>
                                     </div>

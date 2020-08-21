@@ -30,4 +30,40 @@ Partial Public Class ProductPage
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents accordion As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''ddlMinPrice control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlMinPrice As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''ddlMaxPrice control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlMaxPrice As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''btnSearchPrice control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnSearchPrice As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''lblPriceInvalid control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblPriceInvalid As Global.System.Web.UI.WebControls.Label
 End Class
