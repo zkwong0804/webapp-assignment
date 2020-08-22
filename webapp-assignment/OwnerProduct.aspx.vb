@@ -125,8 +125,4 @@ Public Class OwnerProduct
             GC.Collect()
         End Try
     End Sub
-
-    Protected Sub btnShopee_Click(sender As Object, e As EventArgs)
-
-    End Sub
 End Class

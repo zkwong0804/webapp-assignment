@@ -28,7 +28,7 @@ Public Class Product1
     Public Sub lbtAddCart_Click() Handles lbtAddCart.Click
         If Page.IsValid Then
             Dim q As Integer = Integer.Parse(tbxQuantity.Text)
-            If SelectedProduct.category > q Then
+            If SelectedProduct.amt >= q Then
                 Master.AddToCart(SelectedProduct, Integer.Parse(tbxQuantity.Text))
                 Response.Redirect("ViewAll.aspx")
             Else
@@ -40,7 +40,7 @@ Public Class Product1
     Public Sub lbtBuyNow_Click() Handles lbtBuyNow.Click
         If Page.IsValid Then
             Dim q As Integer = Integer.Parse(tbxQuantity.Text)
-            If SelectedProduct.category > q Then
+            If SelectedProduct.amt >= q Then
                 Master.AddToCart(SelectedProduct, Integer.Parse(tbxQuantity.Text))
                 Response.Redirect("Checkout.aspx")
             Else

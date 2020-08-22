@@ -23,6 +23,24 @@ Partial Public Class ProductAdd
     Protected WithEvents btnAdd As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''btnSend control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnSend As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnProceed control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnProceed As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Master property.
     '''</summary>
     '''<remarks>

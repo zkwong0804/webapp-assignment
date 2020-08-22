@@ -50,15 +50,6 @@ Partial Public Class OwnerProduct
     Protected WithEvents btnAdd As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''btnShopee control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnShopee As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''btnBulk control.
     '''</summary>
     '''<remarks>
