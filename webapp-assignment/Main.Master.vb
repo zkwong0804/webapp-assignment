@@ -3,8 +3,6 @@
     Dim dbCtx As New AssignmentDbContext()
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        'Session("member") = dbCtx.Members.Where(Function(f) f.User.email = "test@mail.com").SingleOrDefault()
-        'Session("userType") = "member"
     End Sub
 
     Protected Sub lbtLogReg_Click() Handles lbtLogReg.Click

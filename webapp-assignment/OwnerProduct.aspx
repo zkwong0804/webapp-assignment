@@ -37,6 +37,7 @@
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="fupBulk" 
                         ErrorMessage="You must upload an excel doc in order to perform bulk upload!" 
                         ForeColor="Red" ValidationGroup="excelbulk"></asp:RequiredFieldValidator>
+                    <a href="TemplateDownload.aspx">Download template</a>
                 </div>
             </div>
         </div>

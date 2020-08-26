@@ -454,6 +454,7 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="TemplateDownload.aspx" />
     <Content Include="ViewAll.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -911,6 +912,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>stockds.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TemplateDownload.aspx.designer.vb">
+      <DependentUpon>TemplateDownload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateDownload.aspx.vb">
+      <DependentUpon>TemplateDownload.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="ViewAll.aspx.designer.vb">
       <DependentUpon>ViewAll.aspx</DependentUpon>
     </Compile>
@@ -1067,6 +1075,7 @@
     <Folder Include="images\Comments\" />
     <Folder Include="images\Products\" />
     <Folder Include="Spreadsheet\" />
+    <Folder Include="Templates\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
