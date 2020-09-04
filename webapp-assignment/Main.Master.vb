@@ -2,7 +2,11 @@
     Inherits System.Web.UI.MasterPage
     Dim dbCtx As New AssignmentDbContext()
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        If Not IsNothing(Session("userType")) Then
+            If CStr(Session("userType")) = "owner" Then
+                Response.Redirect("OwnerPortal.aspx")
+            End If
+        End If
     End Sub
 
     Protected Sub lbtLogReg_Click() Handles lbtLogReg.Click

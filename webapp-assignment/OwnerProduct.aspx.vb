@@ -1,4 +1,5 @@
-﻿Imports Microsoft.Office.Interop
+﻿Imports NPOI.XSSF.UserModel
+Imports NPOI.SS.UserModel
 
 Public Class OwnerProduct
     Inherits System.Web.UI.Page
@@ -70,59 +71,52 @@ Public Class OwnerProduct
     Protected Sub btnBulk_Click(sender As Object, e As EventArgs)
 
         If Page.IsValid Then
-            Dim fileloc As String = Server.MapPath(fupBulk.PostedFile.FileName)
-            fupBulk.SaveAs(fileloc)
-            Dim xlApp As New Excel.Application
-            Dim xlWorkBook As Excel.Workbook = xlApp.Workbooks.Open(fileloc)
-            Dim xlWorkSheet As Excel.Worksheet = xlWorkBook.Worksheets("sheet1")
+            Try
+                Dim fileloc As String = Server.MapPath(String.Format("/Spreadsheet/{0}", fupBulk.PostedFile.FileName))
+                fupBulk.SaveAs(fileloc)
+                Dim workbook As New XSSFWorkbook(fileloc)
+                Dim worksheet As XSSFSheet = workbook.GetSheetAt(0)
+                Dim i As Integer = 1
+                While Not IsNothing(worksheet.GetRow(i))
+                    Dim newProd As New Product()
+                    Dim cRow As IRow = worksheet.GetRow(i)
+                    Dim cName As ICell = cRow.GetCell(0)
+                    Dim cPrice As ICell = cRow.GetCell(1)
+                    Dim cAmt As ICell = cRow.GetCell(2)
+                    Dim cDescription As ICell = cRow.GetCell(3)
+                    Dim cCat As ICell = cRow.GetCell(4)
 
-            Dim i As Integer = 2
-            While Not IsNothing(xlWorkSheet.Cells(i, 1).value)
-                Dim newProd As New Product()
+                    newProd.name = cName.ToString()
+                    newProd.price = Decimal.Parse(cPrice.ToString())
+                    newProd.amt = Integer.Parse(cAmt.ToString())
+                    newProd.description = cDescription.ToString()
+                    newProd.isAvailable = True
+                    newProd.imageLoc = "~/images/Products/Default.png"
 
-                newProd.name = xlWorkSheet.Cells(i, 1).value.ToString()
-                newProd.price = Decimal.Parse(xlWorkSheet.Cells(i, 2).value)
-                newProd.amt = Integer.Parse(xlWorkSheet.Cells(i, 3).value)
-                newProd.description = xlWorkSheet.Cells(i, 4).value.ToString()
-                newProd.isAvailable = True
-                newProd.imageLoc = "~/images/Products/Default.png"
+                    Dim catName As String = cCat.ToString()
+                    Dim checkCat As Category = dbCtx.Categories.Where(Function(f) f.name = catName).SingleOrDefault()
+                    If Not IsNothing(checkCat) Then
+                        newProd.category = checkCat.id
+                    Else
+                        Dim newCat As New Category()
+                        newCat.name = catName
+                        newCat.category1 = 1
+                        newCat.isAvailable = True
+                        dbCtx.Categories.Add(newCat)
+                        dbCtx.SaveChanges()
+                        newProd.category = newCat.id
+                    End If
+                    dbCtx.Products.Add(newProd)
+                    i += 1
+                End While
 
-                Dim catName As String = xlWorkSheet.Cells(i, 5).value.ToString()
-                Dim checkCat As Category = dbCtx.Categories.Where(Function(f) f.name = catName).SingleOrDefault()
-                If Not IsNothing(checkCat) Then
-                    newProd.category = checkCat.id
-                Else
-                    Dim newCat As New Category()
-                    newCat.name = catName
-                    newCat.category1 = 1
-                    newCat.isAvailable = True
-                    dbCtx.Categories.Add(newCat)
-                    dbCtx.SaveChanges()
-                    newProd.category = newCat.id
-                End If
-                dbCtx.Products.Add(newProd)
-                i += 1
-            End While
-
-            xlWorkBook.Close()
-            xlApp.Quit()
-
-            releaseObject(xlApp)
-            releaseObject(xlWorkBook)
-            releaseObject(xlWorkSheet)
+            Catch ex As Exception
+                lblProductMsg.Visible = True
+                lblProductMsg.Text = $"Failed to bulk import.[{ex.Message}]"
+            End Try
 
             dbCtx.SaveChanges()
             Response.Redirect("OwnerProduct.aspx")
         End If
-    End Sub
-    Private Sub releaseObject(ByVal obj As Object)
-        Try
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
-            obj = Nothing
-        Catch ex As Exception
-            obj = Nothing
-        Finally
-            GC.Collect()
-        End Try
     End Sub
 End Class

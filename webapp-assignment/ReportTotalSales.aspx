@@ -13,15 +13,19 @@
                 <div class="col-md-12 order-md-last d-flex">
                     <div class="bg-white p-5 contact-form">
 
-                        <rsweb:ReportViewer ID="rvTotalSales" runat="server" Width="90%" Height="1000px">
+                        <rsweb:ReportViewer ID="rvTotalSales" runat="server" Width="90%" Height="1000px" BackColor="" ClientIDMode="AutoID" HighlightBackgroundColor="" InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor="" LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor="" PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px" ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226">
                             <LocalReport ReportPath="Reports\TotalSales.rdlc">
                                 <DataSources>
+                                    
                                     <rsweb:ReportDataSource DataSourceId="SqlDataSource1" Name="TotalSalesDS" />
+                                    
                                 </DataSources>
                             </LocalReport>
                             
                         </rsweb:ReportViewer>
+                        
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AssignmentConnString %>" SelectCommand="SELECT * FROM [Order]"></asp:SqlDataSource>
+                        
                     </div>
                 </div>
             </div>

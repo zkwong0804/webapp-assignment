@@ -55,7 +55,7 @@
                         lblDobValidate.Visible = True
                     End If
                 Catch ex As Exception
-                    lblDobValidate.Text = "Invalid date format"
+                    lblDobValidate.Text = $"Invalid date format.[{ex.Message}]"
                     lblDobValidate.Visible = True
                 End Try
             Else

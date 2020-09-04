@@ -6,12 +6,12 @@
     End Sub
 
     Protected Sub btnLogin_Click() Handles btnLogin.Click
-        Dim user As User = dbCtx.Users.Where(Function(e) e.email = tbxLoginMail.Text).SingleOrDefault()
+        Dim user As Member = dbCtx.Members.Where(Function(e) e.User.email = tbxLoginMail.Text).SingleOrDefault()
         If IsNothing(user) Then
             lblLoginMessage.Text = "Email does not exist in our database!"
         Else
-            If tbxLoginPass.Text = user.password Then
-                Session("member") = dbCtx.Members.Where(Function(e) e.userId = user.id).SingleOrDefault()
+            If tbxLoginPass.Text = user.User.password Then
+                Session("member") = user
                 Session("userType") = "member"
                 Response.Redirect("Default.aspx")
             Else
